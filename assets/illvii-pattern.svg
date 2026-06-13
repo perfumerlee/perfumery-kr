@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">ILLVII inspired background pattern</title>
+  <desc id="desc">A subtle circular stripe pattern inspired by the ILLVII logo.</desc>
+  <defs>
+    <clipPath id="circle">
+      <circle cx="320" cy="320" r="210"/>
+    </clipPath>
+  </defs>
+  <g fill="#1f4a31">
+    <g clip-path="url(#circle)">
+      <rect x="88" y="182" width="34" height="276" rx="14"/>
+      <rect x="146" y="126" width="42" height="388" rx="18"/>
+      <rect x="212" y="92" width="50" height="456" rx="20"/>
+      <path d="M292 84h58l-24 472h-66z"/>
+      <path d="M388 84h58l-34 472h-56z"/>
+      <rect x="468" y="126" width="42" height="388" rx="18"/>
+      <rect x="536" y="184" width="34" height="272" rx="14"/>
+    </g>
+    <path d="M88 320c0-112 82-206 192-222v36C190 150 124 228 124 320s66 170 156 186v36C170 526 88 432 88 320z" opacity=".55"/>
+    <path d="M360 98c110 16 192 110 192 222s-82 206-192 222v-36c90-16 156-94 156-186s-66-170-156-186z" opacity=".55"/>
+  </g>
+</svg>
