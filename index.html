@@ -452,6 +452,53 @@
     .status { margin: 0; color: var(--muted); font-size: 14px; }
     .status.ok { color: #326647; }
     .status.err { color: var(--danger); }
+    .result-card {
+      grid-column: 2;
+      margin-top: 22px;
+      padding: 26px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(21, 32, 51, .10);
+      background: #fff;
+      box-shadow: 0 14px 36px rgba(21, 32, 51, .08);
+      outline: none;
+    }
+    .result-card[hidden] { display: none; }
+    .result-card.ok { border-color: rgba(50, 102, 71, .24); }
+    .result-card.err { border-color: rgba(168, 66, 54, .26); }
+    .result-badge {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .result-card h3 {
+      margin: 14px 0 8px;
+      color: var(--navy);
+      font-size: 25px;
+      letter-spacing: -0.04em;
+      line-height: 1.25;
+    }
+    .result-card p { margin: 0; color: #4f5a70; }
+    .result-next {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      background: var(--paper);
+      color: #4f5a70;
+    }
+    .result-next strong { display: block; color: var(--navy); margin-bottom: 6px; }
+    .result-next ul { margin: 8px 0 0; padding-left: 18px; }
+    .result-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
     .hidden-field { position: absolute; left: -9999px; opacity: 0; height: 1px; width: 1px; }
 
     footer {
@@ -467,6 +514,7 @@
       .cards { grid-template-columns: 1fr 1fr; }
       .process { grid-template-columns: repeat(3, 1fr); }
       .form-aside { position: static; }
+      .result-card { grid-column: 1; }
       .section-head { display: block; }
       .section-head p { margin-top: 14px; }
     }
@@ -657,7 +705,7 @@
           </ul>
         </aside>
 
-        <form id="inquiryForm" action="https://script.google.com/macros/s/AKfycbyarDqtwVPH1_Z6YCXtgufvhOHgMpCsjqROzaaGHlq27FJW_h34FazGtC8u0GjePOTZ/exec" method="post" accept-charset="UTF-8" novalidate>
+        <form id="inquiryForm" action="https://script.google.com/macros/s/AKfycby1siKYhHYLJKprw2uTe560AKlizcuUzJqXevLLg4T7usc0RRo1o4RxofgsLYQD95U/exec" method="post" target="inquirySubmitFrame" accept-charset="UTF-8" novalidate>
           <div class="hidden-field" aria-hidden="true">
             <label for="companyWebsite">회사 홈페이지</label>
             <input id="companyWebsite" name="companyWebsite" tabindex="-1" autocomplete="off" />
@@ -735,14 +783,29 @@
           </div>
 
           <input type="hidden" id="pageUrl" name="pageUrl" value="" />
+          <input type="hidden" id="returnUrl" name="returnUrl" value="" />
           <input type="hidden" id="userAgent" name="userAgent" value="" />
           <input type="hidden" id="submittedAtClient" name="submittedAtClient" value="" />
+          <input type="hidden" id="clientToken" name="clientToken" value="" />
 
           <div class="form-actions">
             <button class="btn" id="submitButton" type="submit">제작 문의 보내기</button>
             <p class="status" id="formStatus" role="status" aria-live="polite"></p>
           </div>
         </form>
+
+        <article id="inquiryResult" class="result-card" tabindex="-1" hidden>
+          <span id="resultBadge" class="result-badge">Received</span>
+          <h3 id="resultTitle">문의가 접수되었습니다.</h3>
+          <p id="resultMessage">입력하신 내용을 검토한 뒤 회신드리겠습니다.</p>
+          <div id="resultNext" class="result-next"></div>
+          <div class="result-actions">
+            <a id="resultPrimary" class="btn" href="#">사이트 처음으로</a>
+            <a id="resultSecondary" class="btn secondary" href="#inquiry">새 문의 작성</a>
+          </div>
+        </article>
+
+        <iframe id="inquirySubmitFrame" name="inquirySubmitFrame" title="문의 전송 처리 프레임" style="display:none;"></iframe>
       </div>
     </section>
   </main>
@@ -759,16 +822,170 @@
     const statusEl = document.getElementById("formStatus");
     const submitButton = document.getElementById("submitButton");
     const pageUrl = document.getElementById("pageUrl");
+    const returnUrl = document.getElementById("returnUrl");
     const userAgent = document.getElementById("userAgent");
     const submittedAtClient = document.getElementById("submittedAtClient");
+    const clientToken = document.getElementById("clientToken");
+    const submitFrame = document.getElementById("inquirySubmitFrame");
+
+    const resultCard = document.getElementById("inquiryResult");
+    const resultBadge = document.getElementById("resultBadge");
+    const resultTitle = document.getElementById("resultTitle");
+    const resultMessage = document.getElementById("resultMessage");
+    const resultNext = document.getElementById("resultNext");
+    const resultPrimary = document.getElementById("resultPrimary");
+    const resultSecondary = document.getElementById("resultSecondary");
+
+    let submitTimer = null;
+    let submitted = false;
+    let resultHandled = false;
+    let activeToken = "";
+
+    function getCleanPageUrl() {
+      return window.location.href.split("#")[0].split("?")[0];
+    }
+
+    function makeToken() {
+      if (window.crypto && window.crypto.getRandomValues) {
+        const array = new Uint32Array(4);
+        window.crypto.getRandomValues(array);
+        return Array.from(array).map((value) => value.toString(36)).join("");
+      }
+      return String(Date.now()) + String(Math.random()).slice(2);
+    }
 
     function setStatus(message, type = "") {
       statusEl.textContent = message;
       statusEl.className = `status ${type}`.trim();
     }
 
+    function setHiddenMetaValues() {
+      activeToken = makeToken();
+      pageUrl.value = window.location.href;
+      returnUrl.value = getCleanPageUrl();
+      userAgent.value = window.navigator.userAgent;
+      submittedAtClient.value = new Date().toISOString();
+      clientToken.value = activeToken;
+    }
+
+    function resetResultUrl(anchor = "inquiry") {
+      const cleanUrl = `${getCleanPageUrl()}#${anchor}`;
+      window.history.replaceState({}, "", cleanUrl);
+    }
+
+    function clearSubmitTimer() {
+      if (submitTimer) {
+        window.clearTimeout(submitTimer);
+        submitTimer = null;
+      }
+    }
+
+    function renderInquiryResult(status, reason = "") {
+      if (resultHandled && status === "success") return;
+      resultHandled = true;
+      clearSubmitTimer();
+
+      const isSuccess = status === "success";
+
+      resultCard.hidden = false;
+      resultCard.classList.toggle("ok", isSuccess);
+      resultCard.classList.toggle("err", !isSuccess);
+
+      if (isSuccess) {
+        resultBadge.textContent = "Received";
+        resultTitle.textContent = "문의가 접수되었습니다.";
+        resultMessage.textContent = "일비 퍼퓨머리 하우스에 제작 문의가 정상적으로 전달되었습니다. 입력하신 내용을 검토한 뒤 이메일 또는 연락처로 회신드리겠습니다.";
+        resultNext.innerHTML = `
+          <strong>다음 단계</strong>
+          <ul>
+            <li>제작 목적, 수량, 용량, 일정, 예산 범위를 먼저 확인합니다.</li>
+            <li>추가 확인이 필요한 경우 입력하신 연락처로 질문을 드립니다.</li>
+            <li>가능 범위가 맞으면 샘플, 견적, 생산 흐름 순서로 안내드립니다.</li>
+          </ul>
+        `;
+        form.hidden = true;
+        resultPrimary.textContent = "사이트 처음으로";
+        resultPrimary.href = "/";
+        resultSecondary.textContent = "새 문의 작성";
+        resultSecondary.href = "#inquiry";
+        resultSecondary.onclick = (event) => {
+          event.preventDefault();
+          form.reset();
+          form.hidden = false;
+          resultCard.hidden = true;
+          submitted = false;
+          resultHandled = false;
+          submitButton.disabled = false;
+          submitButton.textContent = "제작 문의 보내기";
+          setStatus("");
+          resetResultUrl("inquiry");
+          setHiddenMetaValues();
+          form.scrollIntoView({ behavior: "smooth", block: "start" });
+        };
+      } else {
+        const messages = {
+          required: "필수 항목이 누락되었습니다. 담당자명, 이메일, 제작 목적, 문의 내용, 개인정보 동의 항목을 확인해주세요.",
+          email: "이메일 형식을 확인해주세요. 회신 가능한 이메일 주소가 필요합니다.",
+          sheet: "문의 저장 위치를 찾지 못했습니다. 잠시 후 다시 시도하거나 다른 연락 수단으로 문의해주세요.",
+          timeout: "전송 결과 확인이 지연되고 있습니다. 문의가 중복 접수될 수 있으니, 먼저 문의DB 저장 여부를 확인해주세요.",
+          system: "일시적인 저장 오류가 발생했습니다. 잠시 후 다시 시도해주세요."
+        };
+
+        resultBadge.textContent = reason === "timeout" ? "Checking" : "Check Form";
+        resultTitle.textContent = reason === "timeout" ? "전송 결과 확인이 지연되고 있습니다." : "문의 접수 중 오류가 발생했습니다.";
+        resultMessage.textContent = messages[reason] || messages.system;
+        resultNext.innerHTML = `
+          <strong>다시 확인할 내용</strong>
+          <ul>
+            <li>필수 항목이 모두 입력되었는지 확인해주세요.</li>
+            <li>개인정보 수집 및 이용 동의 체크 여부를 확인해주세요.</li>
+            <li>오류가 반복되면 이메일 또는 SNS 메시지로 직접 문의해주세요.</li>
+          </ul>
+        `;
+        form.hidden = false;
+        resultPrimary.textContent = "문의폼 다시 확인";
+        resultPrimary.href = "#inquiryForm";
+        resultSecondary.textContent = "처음으로";
+        resultSecondary.href = "/";
+        resultSecondary.onclick = null;
+      }
+
+      submitButton.disabled = false;
+      submitButton.textContent = "제작 문의 보내기";
+      setStatus("");
+      resetResultUrl("inquiry-result");
+
+      window.requestAnimationFrame(() => {
+        resultCard.scrollIntoView({ behavior: "smooth", block: "center" });
+        resultCard.focus({ preventScroll: true });
+      });
+    }
+
+    window.addEventListener("message", (event) => {
+      const data = event.data || {};
+      if (!data || data.source !== "illvii-inquiry") return;
+      if (data.token && data.token !== activeToken) return;
+
+      renderInquiryResult(data.ok ? "success" : "error", data.reason || "system");
+    });
+
+    submitFrame.addEventListener("load", () => {
+      // Apps Script 응답은 googleusercontent.com iframe 안에서 실행되기 때문에
+      // 브라우저/계정 상태에 따라 postMessage 도착이 지연될 수 있습니다.
+      // iframe 로드 자체가 끝나면 주소창은 perfumery.kr에 그대로 두고 자연스럽게 완료 화면을 보여줍니다.
+      if (!submitted || resultHandled) return;
+      window.setTimeout(() => {
+        if (!resultHandled) renderInquiryResult("success");
+      }, 350);
+    });
+
+    setHiddenMetaValues();
+
     form.addEventListener("submit", (event) => {
       setStatus("");
+      resultCard.hidden = true;
+      resultHandled = false;
+      submitted = false;
 
       if (!form.checkValidity()) {
         event.preventDefault();
@@ -777,13 +994,20 @@
         return;
       }
 
-      pageUrl.value = window.location.href;
-      userAgent.value = window.navigator.userAgent;
-      submittedAtClient.value = new Date().toISOString();
+      setHiddenMetaValues();
+      submitted = true;
 
       submitButton.disabled = true;
       submitButton.textContent = "전송 중...";
-      setStatus("문의 내용을 전송하고 있습니다. 전송 후 접수 완료 화면으로 이동합니다.");
+      setStatus("문의 내용을 전송하고 있습니다. 완료 화면이 표시될 때까지 잠시만 기다려주세요.");
+
+      clearSubmitTimer();
+      submitTimer = window.setTimeout(() => {
+        if (!resultHandled) renderInquiryResult("error", "timeout");
+      }, 20000);
+
+      // event.preventDefault()를 하지 않습니다.
+      // 브라우저 기본 form POST를 사용하되, target이 숨김 iframe이므로 주소창은 perfumery.kr에 유지됩니다.
     });
   </script>
 </body>
