@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.04 : logo-inspired background pattern -->
+<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.05 : form action update & hero-panel logo removal -->
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
@@ -206,21 +206,6 @@
       border-radius: var(--radius-lg);
       padding: 30px;
       box-shadow: var(--shadow);
-    }
-
-    .logo-panel {
-      position: relative;
-      overflow: hidden;
-    }
-    .logo-panel::before {
-      content: "";
-      position: absolute;
-      inset: -70px -90px auto auto;
-      width: 210px;
-      height: 210px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(31, 74, 49, .18), transparent 68%);
-      pointer-events: none;
     }
     .hero-logo {
       width: 116px;
@@ -858,8 +843,7 @@
             <div class="note-card"><strong>제품화</strong><span>향, 용기, 충진, 패키지 흐름 정리</span></div>
           </div>
         </div>
-        <aside class="hero-panel logo-panel" aria-label="제작 상담 요약">
-          <img class="hero-logo" src="/assets/illvii-logo.svg" alt="일비 퍼퓨머리 하우스 로고" />
+        <aside class="hero-panel" aria-label="제작 상담 요약">
           <h2 class="panel-title">제작 상담에서 먼저 보는 것</h2>
           <ul class="panel-list">
             <li><b>1</b><span>어떤 목적으로 향수를 만들고 싶은지</span></li>
@@ -998,7 +982,7 @@
           <h2>향수 제작 문의하기</h2>
           <p>아직 구체적이지 않아도 괜찮습니다. 현재 생각 중인 목적과 대략적인 수량만 있어도 첫 검토를 시작할 수 있습니다.</p>
           <ul class="mini-list">
-            <li>문의 내용은 Google Sheets에 저장됩니다.</li>
+            
             <li>접수 후 내부 검토를 거쳐 회신합니다.</li>
             <li>예산, 일정, 수량이 명확할수록 상담이 빨라집니다.</li>
           </ul>
@@ -1089,7 +1073,7 @@
 
           <div class="form-actions">
             <button class="btn" id="submitButton" type="submit">제작 문의 보내기</button>
-            <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+            
           </div>
         </form>
 
