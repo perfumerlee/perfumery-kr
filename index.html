@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.03 : absolute asset paths & scalable SVG logo -->
+<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.04 : logo-inspired background pattern -->
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
@@ -9,6 +9,7 @@
   <meta name="theme-color" content="#1f4a31" />
   <link rel="icon" type="image/svg+xml" href="/assets/illvii-logo.svg" />
   <link rel="alternate icon" type="image/png" href="/assets/illvii-logo.png" />
+  <link rel="preload" href="/assets/illvii-pattern.svg" as="image" type="image/svg+xml" />
   <meta property="og:title" content="일비 퍼퓨머리 하우스" />
   <meta property="og:description" content="향수를 만들고 싶은 순간, 일비 퍼퓨머리 하우스에서 시작하세요." />
   <meta property="og:type" content="website" />
@@ -605,6 +606,227 @@
       section { padding: 54px 0; }
       .hero-panel, form, .form-aside, .statement, .trust-box { padding: 24px; border-radius: 24px; }
     }
+
+    /* v0.04 logo-inspired pattern system */
+    body {
+      background-image:
+        url("/assets/illvii-pattern.svg"),
+        repeating-linear-gradient(112deg, rgba(31, 74, 49, .026) 0 1px, transparent 1px 18px),
+        radial-gradient(circle at 84% 8%, rgba(31, 74, 49, .12), transparent 32%),
+        radial-gradient(circle at 8% 88%, rgba(185, 155, 98, .10), transparent 28%),
+        linear-gradient(180deg, #f8f3e9 0%, var(--paper) 42%, #f4eee2 100%);
+      background-size:
+        min(760px, 68vw) auto,
+        34px 34px,
+        auto,
+        auto,
+        auto;
+      background-position:
+        right -190px top 120px,
+        left top,
+        right top,
+        left bottom,
+        center;
+      background-repeat:
+        no-repeat,
+        repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    }
+
+    .brand-line {
+      padding: 10px 12px;
+      border: 1px solid rgba(31, 74, 49, .08);
+      border-radius: 999px;
+      background: rgba(255, 250, 241, .62);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 16px 42px rgba(20, 35, 24, .055);
+    }
+
+    .brand-pattern {
+      width: min(var(--max), calc(100% - 40px));
+      height: 1px;
+      margin: 18px auto 0;
+      background:
+        linear-gradient(90deg, transparent, rgba(31, 74, 49, .18), rgba(185, 155, 98, .18), transparent);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -170px;
+      top: 28px;
+      width: 540px;
+      height: 540px;
+      border-radius: 50%;
+      background:
+        linear-gradient(90deg,
+          transparent 0 10%,
+          rgba(31, 74, 49, .10) 10% 16%,
+          transparent 16% 24%,
+          rgba(31, 74, 49, .11) 24% 31%,
+          transparent 31% 39%,
+          rgba(31, 74, 49, .12) 39% 46%,
+          transparent 46% 54%,
+          rgba(31, 74, 49, .12) 54% 62%,
+          transparent 62% 70%,
+          rgba(31, 74, 49, .10) 70% 76%,
+          transparent 76% 100%),
+        radial-gradient(circle, rgba(233, 225, 207, .36), rgba(31, 74, 49, .04) 54%, transparent 65%);
+      opacity: .78;
+      pointer-events: none;
+      transform: rotate(-3deg);
+      -webkit-mask-image: radial-gradient(circle, #000 0 63%, transparent 64%);
+      mask-image: radial-gradient(circle, #000 0 63%, transparent 64%);
+    }
+
+    .hero-grid,
+    .site-top,
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-panel,
+    .card,
+    .faq-item,
+    .form-card,
+    .note-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::after,
+    .form-card::after {
+      content: "";
+      position: absolute;
+      right: -86px;
+      bottom: -90px;
+      width: 240px;
+      height: 240px;
+      background: url("/assets/illvii-pattern.svg") center / contain no-repeat;
+      opacity: .075;
+      pointer-events: none;
+    }
+
+    .card::before,
+    .faq-item::before,
+    .note-card::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 78px;
+      height: 100%;
+      background:
+        linear-gradient(90deg,
+          transparent,
+          rgba(31, 74, 49, .045));
+      opacity: .72;
+      pointer-events: none;
+    }
+
+    .statement {
+      background:
+        linear-gradient(135deg, rgba(23, 55, 36, .94), rgba(31, 74, 49, 1)),
+        var(--forest);
+    }
+
+    .statement::before {
+      content: "";
+      position: absolute;
+      inset: auto -80px -100px auto;
+      width: 330px;
+      height: 330px;
+      background: url("/assets/illvii-pattern.svg") center / contain no-repeat;
+      filter: invert(93%) sepia(12%) saturate(355%) hue-rotate(351deg) brightness(101%) contrast(86%);
+      opacity: .16;
+      pointer-events: none;
+    }
+
+    .statement::after {
+      background: rgba(233, 225, 207, .16);
+    }
+
+    .logo-symbol,
+    .hero-logo {
+      background: var(--forest);
+    }
+
+    .btn {
+      box-shadow: 0 12px 30px rgba(31, 74, 49, .12);
+    }
+
+    .btn:hover {
+      box-shadow: 0 16px 36px rgba(31, 74, 49, .20);
+    }
+
+    .btn.secondary {
+      background: rgba(255, 250, 241, .58);
+    }
+
+    @media (max-width: 760px) {
+      body {
+        background-size:
+          440px auto,
+          30px 30px,
+          auto,
+          auto,
+          auto;
+        background-position:
+          right -230px top 118px,
+          left top,
+          right top,
+          left bottom,
+          center;
+      }
+
+      .brand-line {
+        border-radius: 24px;
+      }
+
+      .brand-pattern {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .hero::after {
+        width: 360px;
+        height: 360px;
+        right: -190px;
+        top: 86px;
+        opacity: .42;
+      }
+    }
+
+
+    /* v0.04 logo image display fix */
+    .logo-symbol {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--forest);
+      object-fit: cover;
+      display: block;
+      box-shadow: 0 12px 30px rgba(31, 74, 49, .18);
+      border: 1px solid rgba(233, 225, 207, .40);
+      flex: 0 0 auto;
+    }
+
+    .brand-name {
+      display: grid;
+      line-height: 1.12;
+    }
+
+    .brand-name small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .02em;
+      font-weight: 700;
+    }
+
   </style>
 </head>
 <body>
@@ -617,6 +839,7 @@
       <span class="domain-chip">perfumery.kr</span>
     </div>
   </header>
+  <div class="brand-pattern" aria-hidden="true"></div>
 
   <main id="top">
     <section class="hero">
