@@ -1,5 +1,6 @@
+
 <!doctype html>
-<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.28 : remove mobile hero background logo -->
+<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.29 : hard hide mobile hero decoration -->
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
@@ -3688,6 +3689,66 @@
 
       .hero p.lead {
         line-height: 1.72;
+      }
+    }
+
+
+    /* v0.29 hard hide mobile hero decoration */
+    @media (max-width: 860px) {
+      /* 모바일에서는 히어로 텍스트 가독성을 위해 모든 대형 장식 로고를 완전히 제거 */
+      .hero .hero-art,
+      .hero .hero-visual,
+      .hero .hero-pattern,
+      .hero .hero-symbol,
+      .hero .hero-mark,
+      .hero .hero-logo-bg,
+      .hero .hero-deco,
+      .hero [class*="hero-visual"],
+      .hero [class*="hero-art"],
+      .hero [class*="hero-pattern"],
+      .hero [class*="hero-symbol"],
+      .hero [class*="hero-mark"],
+      .hero [class*="hero-logo"],
+      .hero [class*="hero-deco"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+
+      .hero::before,
+      .hero::after,
+      .hero-copy::before,
+      .hero-copy::after,
+      .hero-grid::before,
+      .hero-grid::after {
+        display: none !important;
+        content: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        background-image: none !important;
+      }
+
+      .hero {
+        background-image:
+          repeating-linear-gradient(115deg, rgba(25, 72, 46, .018) 0 1px, transparent 1px 20px),
+          linear-gradient(180deg, rgba(248, 242, 232, .96), rgba(244, 239, 228, .96)) !important;
+      }
+
+      .hero-grid,
+      .hero-copy,
+      .hero-copy > *,
+      .hero h1,
+      .hero .lead,
+      .hero-actions,
+      .hero-note {
+        position: relative !important;
+        z-index: 10 !important;
+      }
+
+      .hero h1,
+      .hero .lead {
+        max-width: 100% !important;
       }
     }
 
