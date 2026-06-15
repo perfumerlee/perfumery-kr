@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.26 : hero readability pattern adjustment -->
+<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.26 : balanced inquiry form layout -->
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
@@ -3367,87 +3367,142 @@
     }
 
 
-    /* v0.26 hero readability pattern adjustment */
-    body {
-      background-image:
-        repeating-linear-gradient(115deg, rgba(25, 72, 46, .022) 0 1px, transparent 1px 20px),
-        radial-gradient(circle at 84% 6%, rgba(25, 72, 46, .10), transparent 34%),
-        radial-gradient(circle at 8% 92%, rgba(181, 150, 93, .10), transparent 28%),
-        linear-gradient(180deg, #f8f2e8 0%, var(--paper) 45%, #f1eadc 100%);
-      background-size:
-        34px 34px,
-        auto,
-        auto,
-        auto;
-      background-position:
-        left top,
-        right top,
-        left bottom,
-        center;
-      background-repeat:
-        repeat,
-        no-repeat,
-        no-repeat,
-        no-repeat;
-    }
-
-    .hero {
-      isolation: isolate;
-    }
-
-    .hero::before {
-      opacity: .62;
-    }
-
-    .hero::after {
-      right: -260px;
-      top: 96px;
-      width: 430px;
-      height: 430px;
-      opacity: .20;
-      z-index: -1;
-      transform: rotate(-3deg) scale(.92);
-    }
-
-    .hero-grid {
-      z-index: 2;
-    }
-
-    .hero-copy,
-    .hero-panel {
-      position: relative;
-      z-index: 3;
-    }
-
-    .hero h1,
-    .hero p.lead {
-      position: relative;
-      z-index: 4;
-      text-shadow: 0 1px 0 rgba(248, 242, 232, .42);
-    }
-
-    @media (max-width: 760px) {
-      .hero::after {
-        right: -280px;
-        top: 190px;
-        width: 360px;
-        height: 360px;
-        opacity: .14;
+    /* v0.26 balanced inquiry form layout */
+    @media (min-width: 861px) {
+      .inquiry-layout {
+        align-items: start;
       }
 
-      .hero h1,
-      .hero p.lead {
-        text-shadow: 0 1px 0 rgba(248, 242, 232, .54);
+      .inquiry-layout > aside {
+        position: sticky;
+        top: 112px;
+      }
+
+      .form-card {
+        padding: 30px;
+      }
+
+      .field-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 18px;
+        row-gap: 20px;
+        align-items: start;
+      }
+
+      .field {
+        min-width: 0;
+        display: grid;
+        grid-template-rows: auto auto auto;
+        align-content: start;
+      }
+
+      .field label {
+        min-height: 22px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        line-height: 1.25;
+      }
+
+      .field input,
+      .field select {
+        width: 100%;
+        min-height: 58px;
+        height: 58px;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .field textarea {
+        min-height: 174px;
+        resize: vertical;
+      }
+
+      .field-help {
+        margin-top: 8px;
+        min-height: 38px;
+        font-size: 12px;
+        line-height: 1.5;
+        color: #6d786b;
+        word-break: keep-all;
+      }
+
+      #projectTypeNotice.selected-notice {
+        margin-top: 8px;
+        min-height: auto;
+        line-height: 1.45;
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      .field.full .field-help {
+        min-height: auto;
+      }
+
+      .field.full textarea + .field-help {
+        min-height: 18px;
+      }
+
+      .form-card .inquiry-summary,
+      .form-card .inquiry-sim-prompt,
+      .form-card .form-intro {
+        grid-column: 1 / -1;
+      }
+
+      .form-actions {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .form-actions .form-status {
+        margin: 0;
+      }
+
+      .form-actions .btn {
+        min-width: 190px;
       }
     }
 
-    @media (max-width: 420px) {
-      .hero::after {
-        right: -300px;
-        top: 220px;
-        width: 340px;
-        height: 340px;
-        opacity: .10;
+    @media (min-width: 861px) and (max-width: 1180px) {
+      .field-help {
+        min-height: 54px;
+      }
+
+      .field input,
+      .field select {
+        min-height: 56px;
+        height: 56px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .field-grid {
+        row-gap: 18px;
+      }
+
+      .field input,
+      .field select {
+        min-height: 56px;
+      }
+
+      .field-help {
+        margin-top: 7px;
+        line-height: 1.5;
+      }
+
+      .form-actions {
+        display: grid;
+        gap: 12px;
+      }
+
+      .form-actions .btn {
+        width: 100%;
       }
     }
 
