@@ -1,6 +1,5 @@
-
 <!doctype html>
-<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.32 : GNB simulator label update -->
+<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.33 : mobile header hero spacing adjustment -->
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
@@ -3863,6 +3862,51 @@
       }
     }
 
+
+    /* v0.33 mobile header and hero top spacing adjustment */
+    @media (max-width: 860px) {
+      .site-top {
+        padding-top: 14px;
+        padding-bottom: 0;
+      }
+
+      .site-top::before {
+        height: 168px;
+      }
+
+      .hero {
+        margin-top: -58px;
+        padding-top: 108px;
+      }
+
+      .hero-grid {
+        row-gap: 28px;
+      }
+
+      .hero .eyebrow {
+        margin-bottom: 18px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .site-top {
+        padding-top: 12px;
+      }
+
+      .site-top::before {
+        height: 156px;
+      }
+
+      .hero {
+        margin-top: -54px;
+        padding-top: 96px;
+      }
+
+      .hero .eyebrow {
+        margin-bottom: 16px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -4473,7 +4517,7 @@
           </ul>
         </aside>
 
-        <form id="inquiryForm" action="https://script.google.com/macros/s/AKfycbyleHHbauPeKdVmM1Xs0wXyFyeRBBeaysI10jjsrCX0UsgU10e96PkTSOopuM3hLUbb/exec" method="post" target="inquirySubmitFrame" accept-charset="UTF-8" novalidate>
+        <form id="inquiryForm" action="https://script.google.com/macros/s/AKfycby8gRVygaoiTBRZ1zts5dEai8MQ3iVxOBBj7oaOqbpE-2oq37Uea38RZK76TLifqFc8/exec" method="post" target="inquirySubmitFrame" accept-charset="UTF-8" novalidate>
           <div class="inquiry-sim-prompt" id="inquirySimPrompt">
             <div class="inquiry-sim-prompt-inner">
               <div>
