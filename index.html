@@ -1,5 +1,6 @@
+
 <!doctype html>
-<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.30 : blended header and hero background -->
+<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.31 : shorter simulator inquiry message -->
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
@@ -4081,7 +4082,7 @@
               <div class="sim-result-box"><strong>추천 시작 방식</strong><span id="simulatorStart">-</span></div>
               <div class="sim-result-box"><strong>예상 비용 감각</strong><span id="simulatorBudget">-</span></div>
               <div class="sim-result-box"><strong>먼저 확인할 것</strong><span id="simulatorCheck">-</span></div>
-              <div class="sim-result-box"><strong>문의 시 자동 입력</strong><span id="simulatorAutofill">선택한 조건이 문의폼에 정리됩니다.</span></div>
+              <div class="sim-result-box"><strong>문의 시 자동 입력</strong><span id="simulatorAutofill">중복 항목은 줄이고 참고 내용만 문의 내용에 정리됩니다.</span></div>
               <details class="sim-result-detail full">
                 <summary>
                   <span>
@@ -4577,7 +4578,7 @@
             <div class="field full">
               <label for="message">문의 내용 *</label>
               <textarea id="message" name="message" required placeholder="예: 브랜드 출시를 준비 중입니다. 50ml 판매용 향수를 소량으로 먼저 테스트하고 싶습니다. 아직 수량과 예산은 미정입니다."></textarea>
-              <p class="field-help">만들고 싶은 이유, 사용 목적, 판매/증정 여부, 고민되는 부분을 편하게 적어주세요.</p>
+              <p class="field-help">시뮬레이션을 했다면 중복 정보는 줄이고, 필요한 범위와 현재 단계 등 참고 내용만 자동 입력됩니다. 추가로 상담받고 싶은 내용을 편하게 적어주세요.</p>
             </div>
           </div>
 
@@ -5316,28 +5317,11 @@
         checklist,
         readiness,
         summary: [
-          `[제작 조건 미리보기 결과]`,
-          ``,
-          `제작 목적: ${input.projectType}`,
-          `희망 용량: ${input.volume}`,
-          `예상 수량: ${input.quantity}`,
+          `[시뮬레이션 참고 내용]`,
           `필요 범위: ${input.scope}`,
           `현재 단계: ${input.stage}`,
-          ``,
-          `추천 시작 방식:`,
-          `${startType}`,
-          ``,
-          `예상 비용 감각:`,
-          `${budgetRange}`,
-          ``,
-          `상담 준비도:`,
-          `${readiness.score}% - ${readiness.text}`,
-          ``,
-          `비용이 달라지는 주요 이유:`,
-          `${costFactors.map((item) => `- ${item}`).join("\n")}`,
-          ``,
-          `상담 전 준비하면 좋은 것:`,
-          `${checklist.map((item) => `- ${item}`).join("\n")}`,
+          `추천 시작 방식: ${startType}`,
+          `상담 상태: ${readiness.title} (${readiness.score}%)`,
           ``,
           `추가로 상담받고 싶은 내용:`
         ].join("\n")
@@ -5477,7 +5461,7 @@
 
       if (message) {
         const current = message.value.trim();
-        const shouldReplace = !current || current.startsWith("[제작 조건 미리보기 결과]");
+        const shouldReplace = !current || current.startsWith("[제작 조건 미리보기 결과]") || current.startsWith("[시뮬레이션 참고 내용]");
         message.value = shouldReplace ? result.summary : `${result.summary}\n\n${current}`;
       }
 
