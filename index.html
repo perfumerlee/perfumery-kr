@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.33 : mobile header hero spacing adjustment -->
+<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.34 : no hash smooth navigation -->
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
@@ -3909,7 +3909,7 @@
 
   </style>
 </head>
-<body>
+<body id="top">
     <header class="site-top" id="siteHeader">
     <div class="wrap brand-line">
       <a class="logo-mark" href="#top" aria-label="일비 퍼퓨머리 하우스 홈">
@@ -4823,7 +4823,10 @@
           submitButton.disabled = false;
           submitButton.textContent = "제작 문의 보내기";
           setStatus("");
-          resetResultUrl("inquiry");
+          if (window.history && window.history.replaceState) {
+        const cleanUrl = `${window.location.pathname}${window.location.search}`;
+        window.history.replaceState(null, "", cleanUrl);
+      }
           setHiddenMetaValues();
           form.scrollIntoView({ behavior: "smooth", block: "start" });
         };
@@ -4960,7 +4963,10 @@
           const selectedType = link.getAttribute("data-project-type");
           setProjectTypeFromGuide(selectedType);
 
-          resetResultUrl("inquiry");
+          if (window.history && window.history.replaceState) {
+        const cleanUrl = `${window.location.pathname}${window.location.search}`;
+        window.history.replaceState(null, "", cleanUrl);
+      }
 
           window.setTimeout(() => {
             form.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -5517,7 +5523,10 @@
         filled.classList.add("is-visible");
       }
 
-      resetResultUrl("inquiry");
+      if (window.history && window.history.replaceState) {
+        const cleanUrl = `${window.location.pathname}${window.location.search}`;
+        window.history.replaceState(null, "", cleanUrl);
+      }
 
       window.setTimeout(() => {
         form.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -5550,10 +5559,7 @@
       if (startLink) {
         startLink.addEventListener("click", (event) => {
           event.preventDefault();
-          resetResultUrl("simulator");
-
-          const simulator = document.getElementById("simulator");
-          if (simulator) simulator.scrollIntoView({ behavior: "smooth", block: "start" });
+          scrollToSectionWithoutHash("#simulator");
 
           window.setTimeout(() => {
             const startButton = document.getElementById("startSimulatorButton");
@@ -5612,6 +5618,39 @@
 
       document.querySelectorAll('#simulator input[type="radio"]').forEach((input) => {
         input.addEventListener("change", () => handleSimulatorChoice(input));
+      });
+    }
+
+
+
+    function scrollToSectionWithoutHash(targetSelector, block = "start") {
+      if (!targetSelector || !targetSelector.startsWith("#")) return false;
+
+      const target = document.querySelector(targetSelector);
+      if (!target) return false;
+
+      target.scrollIntoView({ behavior: "smooth", block });
+
+      if (window.history && window.history.replaceState) {
+        const cleanUrl = `${window.location.pathname}${window.location.search}`;
+        window.history.replaceState(null, "", cleanUrl);
+      }
+
+      return true;
+    }
+
+    function initNoHashNavigation() {
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        const href = link.getAttribute("href");
+        if (!href || href === "#") return;
+
+        link.addEventListener("click", (event) => {
+          const target = document.querySelector(href);
+          if (!target) return;
+
+          event.preventDefault();
+          scrollToSectionWithoutHash(href);
+        });
       });
     }
 
@@ -5736,6 +5775,7 @@
     initSingleOpenAccordion();
     initSingleOpenDetails("#faq details");
     initProjectTypeLinks();
+    initNoHashNavigation();
     initSimulator();
     initInquirySimulatorPrompt();
     initStickyHeaderAndToc();
