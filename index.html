@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.05 : form action update & hero-panel logo removal -->
+<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.25 : collapsed result detail sections -->
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
@@ -812,18 +812,2605 @@
       font-weight: 700;
     }
 
+
+    /* v0.06 user-friendly inquiry flow */
+    .form-flow {
+      margin: 24px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255, 250, 241, .08);
+      border: 1px solid rgba(233, 225, 207, .16);
+    }
+
+    .flow-step b {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(233, 225, 207, .92);
+      color: var(--forest);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .flow-step strong {
+      display: block;
+      color: rgba(255, 255, 255, .94);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .flow-step span {
+      display: block;
+      margin-top: 2px;
+      color: rgba(255, 255, 255, .64);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .form-note {
+      margin-top: 18px;
+      padding: 15px 16px;
+      border-radius: 16px;
+      background: rgba(233, 225, 207, .12);
+      color: rgba(255, 255, 255, .76);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .field-help {
+      margin: -2px 0 0;
+      color: #7a8474;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #99a091;
+    }
+
+    .faq-tag {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 8px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(185, 155, 98, .14);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      vertical-align: 1px;
+    }
+
+    .result-next li + li {
+      margin-top: 5px;
+    }
+
+    @media (max-width: 680px) {
+      .flow-step {
+        grid-template-columns: 28px 1fr;
+        padding: 11px;
+      }
+
+      .flow-step b {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+
+    .form-intro {
+      margin-bottom: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(31, 74, 49, .07), rgba(185, 155, 98, .08));
+      border: 1px solid rgba(31, 74, 49, .08);
+      color: #546050;
+    }
+
+    .form-intro strong {
+      display: block;
+      color: var(--forest);
+      font-size: 15px;
+      margin-bottom: 3px;
+    }
+
+    .form-intro span {
+      display: block;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+
+    /* v0.07 production type guide */
+    .type-guide {
+      display: grid;
+      gap: 18px;
+    }
+
+    .type-intro {
+      background:
+        linear-gradient(135deg, rgba(31, 74, 49, .92), rgba(23, 55, 36, .98)),
+        var(--forest);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .type-intro::after {
+      content: "";
+      position: absolute;
+      right: -86px;
+      bottom: -100px;
+      width: 300px;
+      height: 300px;
+      background: url("/assets/illvii-pattern.svg") center / contain no-repeat;
+      filter: invert(93%) sepia(12%) saturate(355%) hue-rotate(351deg) brightness(101%) contrast(86%);
+      opacity: .14;
+      pointer-events: none;
+    }
+
+    .type-intro h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 10px;
+      font-size: clamp(26px, 3.4vw, 40px);
+      line-height: 1.18;
+      letter-spacing: -0.055em;
+    }
+
+    .type-intro p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255, 255, 255, .76);
+    }
+
+    .start-lanes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .start-lane {
+      background: rgba(255, 250, 241, .82);
+      border: 1px solid rgba(31, 74, 49, .10);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      min-height: 166px;
+      box-shadow: 0 14px 34px rgba(31, 74, 49, .06);
+    }
+
+    .start-lane b {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: rgba(31, 74, 49, .10);
+      color: var(--forest);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .start-lane h4 {
+      margin: 14px 0 7px;
+      font-size: 19px;
+      line-height: 1.28;
+      letter-spacing: -0.04em;
+      color: var(--forest);
+    }
+
+    .start-lane p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .type-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .type-card {
+      background: var(--card);
+      border: 1px solid rgba(31, 74, 49, .10);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: 0 14px 36px rgba(31, 74, 49, .055);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .type-card::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: -86px;
+      width: 190px;
+      height: 190px;
+      background: url("/assets/illvii-pattern.svg") center / contain no-repeat;
+      opacity: .055;
+      pointer-events: none;
+    }
+
+    .type-card-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .type-card h3 {
+      margin: 0;
+      color: var(--forest);
+      font-size: 23px;
+      line-height: 1.25;
+      letter-spacing: -0.045em;
+    }
+
+    .type-chip {
+      flex: 0 0 auto;
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(185, 155, 98, .14);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    .type-desc {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    .type-steps {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .type-step {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 15px;
+      background: rgba(246, 241, 231, .74);
+      border: 1px solid rgba(31, 74, 49, .07);
+    }
+
+    .type-step strong {
+      color: var(--forest);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .type-step span {
+      color: #626e62;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .type-link {
+      display: inline-flex;
+      margin-top: 18px;
+      color: var(--forest);
+      font-size: 14px;
+      font-weight: 850;
+      position: relative;
+      z-index: 1;
+    }
+
+    .type-link::after {
+      content: "→";
+      margin-left: 6px;
+      color: var(--gold);
+    }
+
+    @media (max-width: 960px) {
+      .start-lanes {
+        grid-template-columns: 1fr;
+      }
+
+      .type-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .type-step {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .type-card-head {
+        display: grid;
+      }
+    }
+
+
+    /* v0.08 compressed single-open accordion */
+    .type-accordion {
+      display: grid;
+      gap: 12px;
+      margin-top: 6px;
+    }
+    .type-accordion-item {
+      background: rgba(255, 250, 241, .86);
+      border: 1px solid rgba(31, 74, 49, .10);
+      border-radius: var(--radius-md);
+      box-shadow: 0 12px 32px rgba(31, 74, 49, .052);
+      overflow: hidden;
+      position: relative;
+    }
+    .type-accordion-item::after {
+      content: "";
+      position: absolute;
+      right: -92px;
+      top: -112px;
+      width: 220px;
+      height: 220px;
+      background: url("/assets/illvii-pattern.svg") center / contain no-repeat;
+      opacity: .045;
+      pointer-events: none;
+    }
+    .type-toggle {
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      padding: 22px 24px;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      text-align: left;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+    }
+    .type-toggle-main { display: grid; gap: 7px; min-width: 0; }
+    .type-kicker {
+      display: inline-flex;
+      width: fit-content;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(185, 155, 98, .14);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+    .type-toggle-title {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .type-toggle-title strong {
+      color: var(--forest);
+      font-size: 22px;
+      line-height: 1.22;
+      letter-spacing: -0.045em;
+    }
+    .type-toggle-title span {
+      color: #637064;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .type-summary {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+    .type-toggle-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(31, 74, 49, .08);
+      color: var(--forest);
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 700;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .type-accordion-item.is-open .type-toggle-icon {
+      transform: rotate(45deg);
+      background: rgba(31, 74, 49, .14);
+    }
+    .type-panel {
+      display: none;
+      padding: 0 24px 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .type-accordion-item.is-open .type-panel { display: block; }
+    .type-panel-inner {
+      border-top: 1px solid rgba(31, 74, 49, .10);
+      padding-top: 18px;
+    }
+    .type-accordion .type-steps { margin-top: 0; }
+    .type-accordion .type-step {
+      grid-template-columns: 118px 1fr;
+      background: rgba(246, 241, 231, .72);
+    }
+    .type-panel-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 18px;
+    }
+    .type-panel-note {
+      margin: 0;
+      color: #7a8474;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .type-accordion .type-link {
+      margin-top: 0;
+      min-height: 44px;
+      padding: 0 17px;
+      border-radius: 999px;
+      align-items: center;
+      background: var(--forest);
+      color: #fff;
+    }
+    .type-accordion .type-link::after { color: var(--gold-soft); }
+    .section-collapsible {
+      margin-top: 24px;
+      border: 1px solid rgba(31, 74, 49, .10);
+      border-radius: var(--radius-md);
+      background: rgba(255, 250, 241, .70);
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(31, 74, 49, .045);
+    }
+    .section-collapsible > summary {
+      padding: 19px 22px;
+      color: var(--forest);
+      font-weight: 900;
+    }
+    .section-collapsible > summary span {
+      color: var(--muted);
+      font-weight: 600;
+      margin-left: 8px;
+      font-size: 13px;
+    }
+    .section-collapsible-body {
+      padding: 0 22px 22px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    @media (max-width: 680px) {
+      .type-toggle { grid-template-columns: 1fr; padding: 20px; }
+      .type-toggle-icon {
+        position: absolute;
+        right: 18px;
+        top: 18px;
+        width: 34px;
+        height: 34px;
+      }
+      .type-toggle-title { padding-right: 44px; }
+      .type-panel { padding: 0 20px 20px; }
+      .type-accordion .type-step { grid-template-columns: 1fr; }
+    }
+
+
+    /* v0.09 clearer accordion controls */
+    .type-toggle-action {
+      min-width: 106px;
+      min-height: 40px;
+      padding: 0 13px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      background: rgba(31, 74, 49, .08);
+      color: var(--forest);
+      font-size: 13px;
+      font-weight: 900;
+      white-space: nowrap;
+      transition: background .18s ease, color .18s ease;
+    }
+
+    .type-accordion-item.is-open .type-toggle-action {
+      background: var(--forest);
+      color: #fff;
+    }
+
+    .type-action-arrow {
+      font-size: 14px;
+      line-height: 1;
+      transition: transform .18s ease;
+    }
+
+    .type-accordion-item.is-open .type-action-arrow {
+      transform: rotate(180deg);
+    }
+
+    .type-toggle:focus-visible {
+      outline: 3px solid rgba(185, 155, 98, .38);
+      outline-offset: -3px;
+      border-radius: var(--radius-md);
+    }
+
+    .flow-summary {
+      margin-top: 24px;
+      padding: 20px 22px;
+      border: 1px solid rgba(31, 74, 49, .10);
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(255, 250, 241, .78), rgba(246, 241, 231, .78));
+      box-shadow: 0 12px 30px rgba(31, 74, 49, .045);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .flow-summary strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--forest);
+      font-size: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .flow-summary p {
+      margin: 0;
+    }
+
+    @media (max-width: 680px) {
+      .type-toggle-action {
+        justify-self: start;
+        min-width: auto;
+        min-height: 36px;
+        padding: 0 12px;
+      }
+
+      .type-toggle-title {
+        padding-right: 0;
+      }
+    }
+
+
+    /* v0.10 project type prefill feedback */
+    .selected-notice {
+      margin: 2px 0 0;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(31, 74, 49, .08);
+      color: var(--forest);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .field.is-highlighted {
+      animation: fieldPulse 1.4s ease;
+    }
+
+    @keyframes fieldPulse {
+      0% { box-shadow: 0 0 0 0 rgba(31, 74, 49, .28); }
+      45% { box-shadow: 0 0 0 8px rgba(31, 74, 49, .08); }
+      100% { box-shadow: 0 0 0 0 rgba(31, 74, 49, 0); }
+    }
+
+
+    /* v0.12 type intro position adjustment */
+    .type-intro-after {
+      margin-top: 2px;
+    }
+
+    .type-intro-after h3 {
+      max-width: 720px;
+    }
+
+    .type-intro-after p {
+      max-width: 800px;
+    }
+
+    @media (max-width: 680px) {
+      .type-intro-after {
+        padding: 26px;
+      }
+    }
+
+
+    /* v0.13 production simulator */
+    .simulator-section {
+      padding-top: 28px;
+    }
+
+    .simulator-shell {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .simulator-intro {
+      background:
+        linear-gradient(135deg, rgba(31, 74, 49, .94), rgba(23, 55, 36, .98)),
+        var(--forest);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      color: #fff;
+      position: sticky;
+      top: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .simulator-intro::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -100px;
+      width: 290px;
+      height: 290px;
+      background: url("/assets/illvii-pattern.svg") center / contain no-repeat;
+      filter: invert(93%) sepia(12%) saturate(355%) hue-rotate(351deg) brightness(101%) contrast(86%);
+      opacity: .14;
+      pointer-events: none;
+    }
+
+    .simulator-intro h2 {
+      position: relative;
+      z-index: 1;
+      margin: 14px 0 14px;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.14;
+      letter-spacing: -0.06em;
+    }
+
+    .simulator-intro p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: rgba(255, 255, 255, .76);
+    }
+
+    .simulator-points {
+      position: relative;
+      z-index: 1;
+      margin-top: 24px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .simulator-point {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 11px;
+      align-items: start;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255, 250, 241, .08);
+      border: 1px solid rgba(233, 225, 207, .14);
+      color: rgba(255, 255, 255, .76);
+      font-size: 13px;
+      line-height: 1.48;
+    }
+
+    .simulator-point b {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(233, 225, 207, .92);
+      color: var(--forest);
+      font-size: 12px;
+    }
+
+    .simulator-card {
+      background: var(--card);
+      border: 1px solid rgba(31, 74, 49, .10);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .simulator-card::after {
+      content: "";
+      position: absolute;
+      right: -92px;
+      top: -102px;
+      width: 260px;
+      height: 260px;
+      background: url("/assets/illvii-pattern.svg") center / contain no-repeat;
+      opacity: .045;
+      pointer-events: none;
+    }
+
+    .simulator-form {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 20px;
+    }
+
+    .sim-step {
+      display: grid;
+      gap: 12px;
+    }
+
+    .sim-step-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sim-step-head b {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(31, 74, 49, .10);
+      color: var(--forest);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .sim-step-head strong {
+      color: var(--forest);
+      font-size: 17px;
+      letter-spacing: -0.03em;
+    }
+
+    .sim-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+    }
+
+    .sim-option {
+      cursor: pointer;
+      position: relative;
+    }
+
+    .sim-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .sim-option span {
+      min-height: 52px;
+      padding: 12px 13px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: rgba(246, 241, 231, .78);
+      border: 1px solid rgba(31, 74, 49, .10);
+      color: #536151;
+      font-size: 13px;
+      font-weight: 780;
+      line-height: 1.32;
+      transition: background .16s ease, color .16s ease, border-color .16s ease, transform .16s ease;
+    }
+
+    .sim-option input:checked + span {
+      background: var(--forest);
+      border-color: var(--forest);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(31, 74, 49, .16);
+    }
+
+    .sim-option input:focus-visible + span {
+      outline: 3px solid rgba(185, 155, 98, .38);
+      outline-offset: 2px;
+    }
+
+    .simulator-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      padding-top: 2px;
+    }
+
+    .simulator-result {
+      position: relative;
+      z-index: 1;
+      margin-top: 22px;
+      padding: 22px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(31, 74, 49, .12);
+      background: linear-gradient(135deg, rgba(255, 250, 241, .92), rgba(246, 241, 231, .92));
+      display: none;
+    }
+
+    .simulator-result.is-visible {
+      display: block;
+    }
+
+    .sim-result-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 15px;
+    }
+
+    .sim-result-top h3 {
+      margin: 0;
+      color: var(--forest);
+      font-size: 24px;
+      line-height: 1.25;
+      letter-spacing: -0.045em;
+    }
+
+    .sim-badge {
+      flex: 0 0 auto;
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(185, 155, 98, .15);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .sim-result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .sim-result-box {
+      padding: 14px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, .62);
+      border: 1px solid rgba(31, 74, 49, .08);
+    }
+
+    .sim-result-box strong {
+      display: block;
+      color: var(--forest);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .sim-result-box span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .sim-result-note {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .simulator-filled {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 15px;
+      background: rgba(31, 74, 49, .08);
+      color: var(--forest);
+      font-size: 13px;
+      font-weight: 850;
+      display: none;
+    }
+
+    .simulator-filled.is-visible {
+      display: block;
+    }
+
+    @media (max-width: 960px) {
+      .simulator-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .simulator-intro {
+        position: relative;
+        top: auto;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .simulator-card,
+      .simulator-intro {
+        padding: 24px;
+      }
+
+      .sim-options {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .sim-result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sim-result-top {
+        display: grid;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .sim-options {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* v0.14 step-by-step simulator */
+    .simulator-start {
+      position: relative;
+      z-index: 1;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(31, 74, 49, .08), rgba(185, 155, 98, .08));
+      border: 1px solid rgba(31, 74, 49, .10);
+      margin-bottom: 20px;
+    }
+
+    .simulator-start h3 {
+      margin: 12px 0 8px;
+      color: var(--forest);
+      font-size: 26px;
+      line-height: 1.25;
+      letter-spacing: -0.045em;
+    }
+
+    .simulator-start p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .simulator-start.is-hidden {
+      display: none;
+    }
+
+    .simulator-form.is-locked {
+      display: none;
+    }
+
+    .simulator-progress {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 18px;
+      padding: 15px 16px;
+      border-radius: 16px;
+      background: rgba(246, 241, 231, .74);
+      border: 1px solid rgba(31, 74, 49, .08);
+    }
+
+    .sim-progress-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .sim-progress-top strong {
+      color: var(--forest);
+      font-size: 14px;
+    }
+
+    .sim-progress-top span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .sim-progress-bar {
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(31, 74, 49, .10);
+      overflow: hidden;
+    }
+
+    .sim-progress-bar span {
+      display: block;
+      width: 20%;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--forest);
+      transition: width .22s ease;
+    }
+
+    .sim-step {
+      display: none;
+    }
+
+    .sim-step.is-active {
+      display: grid;
+      animation: simStepIn .22s ease both;
+    }
+
+    .sim-step.is-complete {
+      display: grid;
+      opacity: .56;
+      transform: scale(.995);
+    }
+
+    .sim-step.is-complete .sim-options {
+      display: none;
+    }
+
+    .sim-step.is-complete .sim-step-copy::after {
+      content: " 선택 완료";
+      color: var(--forest);
+      font-weight: 900;
+    }
+
+    .sim-step-copy {
+      margin: -4px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    @keyframes simStepIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .sim-option span {
+      min-height: 58px;
+    }
+
+    .simulator-actions {
+      animation: simStepIn .22s ease both;
+    }
+
+
+    /* v0.15 unified simulator intro */
+    .simulator-section {
+      padding-top: 42px;
+    }
+
+    .simulator-shell-unified {
+      display: block;
+    }
+
+    .simulator-card-unified {
+      padding: 0;
+      background: rgba(255, 250, 241, .78);
+      overflow: hidden;
+    }
+
+    .simulator-start-unified {
+      margin: 0;
+      padding: clamp(28px, 5vw, 52px);
+      border: 0;
+      border-radius: var(--radius-lg) var(--radius-lg) 34px 34px;
+      background:
+        linear-gradient(135deg, rgba(31, 74, 49, .96), rgba(23, 55, 36, .98)),
+        var(--forest);
+      color: #fff;
+      display: grid;
+      grid-template-columns: minmax(0, .98fr) minmax(300px, .76fr);
+      gap: 28px;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .simulator-start-unified::after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -112px;
+      width: 330px;
+      height: 330px;
+      background: url("/assets/illvii-pattern.svg") center / contain no-repeat;
+      filter: invert(93%) sepia(12%) saturate(355%) hue-rotate(351deg) brightness(101%) contrast(86%);
+      opacity: .13;
+      pointer-events: none;
+    }
+
+    .simulator-start-copy,
+    .simulator-start-unified .simulator-points,
+    .simulator-start-action {
+      position: relative;
+      z-index: 1;
+    }
+
+    .simulator-start-copy h2 {
+      margin: 14px 0 16px;
+      color: #fff;
+      font-size: clamp(34px, 5.2vw, 64px);
+      line-height: 1.08;
+      letter-spacing: -0.065em;
+    }
+
+    .simulator-start-copy p {
+      margin: 0;
+      max-width: 720px;
+      color: rgba(255, 255, 255, .72);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.7;
+    }
+
+    .simulator-start-unified .eyebrow {
+      color: var(--gold-soft);
+    }
+
+    .simulator-start-unified .simulator-points {
+      margin: 0;
+    }
+
+    .simulator-start-action {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      padding-top: 8px;
+    }
+
+    .simulator-start-button {
+      background: var(--cream);
+      color: var(--forest);
+      border-color: var(--cream);
+      min-height: 56px;
+      padding-inline: 26px;
+    }
+
+    .simulator-start-action span {
+      color: rgba(255, 255, 255, .66);
+      font-size: 14px;
+    }
+
+    .simulator-start-unified.is-hidden {
+      display: none;
+    }
+
+    .simulator-card-unified .simulator-progress,
+    .simulator-card-unified .simulator-form,
+    .simulator-card-unified .simulator-result {
+      margin: 28px;
+    }
+
+    .simulator-card-unified .simulator-progress {
+      margin-bottom: 0;
+    }
+
+    .simulator-card-unified .simulator-form {
+      padding: 0 0 4px;
+    }
+
+    .simulator-card-unified .simulator-result {
+      margin-top: 0;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 860px) {
+      .simulator-start-unified {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .simulator-start-action {
+        padding-top: 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .simulator-section {
+        padding-top: 26px;
+      }
+
+      .simulator-card-unified {
+        border-radius: 30px;
+      }
+
+      .simulator-start-unified {
+        padding: 28px 22px;
+        border-radius: 30px 30px 26px 26px;
+      }
+
+      .simulator-card-unified .simulator-progress,
+      .simulator-card-unified .simulator-form,
+      .simulator-card-unified .simulator-result {
+        margin: 20px;
+      }
+
+      .simulator-start-button {
+        width: 100%;
+      }
+
+      .simulator-start-action span {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+
+    /* v0.16 refined structure & premium visual tone */
+    :root {
+      --paper: #f4efe4;
+      --card: #fffaf0;
+      --forest: #19482e;
+      --forest-deep: #103420;
+      --forest-soft: #2a6542;
+      --gold: #b5965d;
+      --gold-soft: #e8dcc5;
+      --ink: #112015;
+      --muted: #657365;
+      --shadow: 0 28px 80px rgba(16, 52, 32, .13);
+    }
+
+    body {
+      background-image:
+        url("/assets/illvii-pattern.svg"),
+        repeating-linear-gradient(115deg, rgba(25, 72, 46, .022) 0 1px, transparent 1px 20px),
+        radial-gradient(circle at 84% 6%, rgba(25, 72, 46, .13), transparent 34%),
+        radial-gradient(circle at 8% 92%, rgba(181, 150, 93, .12), transparent 28%),
+        linear-gradient(180deg, #f8f2e8 0%, var(--paper) 45%, #f1eadc 100%);
+    }
+
+    .brand-line {
+      border-radius: 28px;
+      padding: 10px 12px;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .site-nav a {
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: #506050;
+      font-size: 13px;
+      font-weight: 800;
+      transition: background .16s ease, color .16s ease;
+    }
+
+    .site-nav a:hover {
+      background: rgba(25, 72, 46, .08);
+      color: var(--forest);
+    }
+
+    .hero {
+      padding-top: 70px;
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 6.2vw, 82px);
+    }
+
+    .hero-panel,
+    .note-card,
+    .card,
+    .start-lane,
+    .type-accordion-item,
+    .faq-list details,
+    form,
+    .result-card {
+      border-color: rgba(25, 72, 46, .09);
+      box-shadow: 0 16px 48px rgba(16, 52, 32, .065);
+    }
+
+    .hero-panel {
+      background:
+        linear-gradient(180deg, rgba(255, 250, 240, .95), rgba(250, 244, 233, .86));
+      backdrop-filter: blur(10px);
+    }
+
+    .factory-journey {
+      padding-top: 64px;
+      padding-bottom: 52px;
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .journey-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 210px;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      background:
+        linear-gradient(180deg, rgba(255, 250, 240, .88), rgba(248, 242, 231, .84));
+      border: 1px solid rgba(25, 72, 46, .10);
+      box-shadow: 0 16px 44px rgba(16, 52, 32, .06);
+    }
+
+    .journey-card::after {
+      content: "";
+      position: absolute;
+      right: -78px;
+      bottom: -90px;
+      width: 190px;
+      height: 190px;
+      background: url("/assets/illvii-pattern.svg") center / contain no-repeat;
+      opacity: .055;
+      pointer-events: none;
+    }
+
+    .journey-card span {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background: rgba(25, 72, 46, .10);
+      color: var(--forest);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .journey-card h3 {
+      margin: 20px 0 8px;
+      color: var(--forest);
+      font-size: 22px;
+      line-height: 1.25;
+      letter-spacing: -0.045em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .journey-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.62;
+      position: relative;
+      z-index: 1;
+    }
+
+    .simulator-card-unified {
+      border: 1px solid rgba(25, 72, 46, .11);
+      box-shadow: 0 32px 90px rgba(16, 52, 32, .14);
+    }
+
+    .simulator-start-unified {
+      background:
+        radial-gradient(circle at 88% 12%, rgba(232, 220, 197, .12), transparent 34%),
+        linear-gradient(135deg, rgba(25, 72, 46, .98), rgba(16, 52, 32, 1));
+    }
+
+    .simulator-start-copy h2 {
+      text-wrap: balance;
+    }
+
+    .simulator-point {
+      background: rgba(255, 250, 240, .075);
+      border-color: rgba(232, 220, 197, .18);
+    }
+
+    .sim-option span {
+      background: rgba(250, 244, 233, .82);
+    }
+
+    .sim-option input:checked + span {
+      background: linear-gradient(135deg, var(--forest), var(--forest-deep));
+    }
+
+    .btn {
+      background: linear-gradient(135deg, var(--forest), var(--forest-deep));
+      border-color: var(--forest);
+    }
+
+    .btn.secondary {
+      background: rgba(255, 250, 240, .62);
+      color: var(--forest);
+      border-color: rgba(25, 72, 46, .18);
+    }
+
+    .simulator-start-button {
+      background: var(--cream);
+      color: var(--forest);
+      border-color: var(--cream);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, .10);
+    }
+
+    .section-head h2 {
+      text-wrap: balance;
+    }
+
+    .quote {
+      font-size: 19px;
+      line-height: 1.65;
+      color: #324233;
+    }
+
+    @media (max-width: 1080px) {
+      .site-nav {
+        display: none;
+      }
+
+      .brand-line {
+        justify-content: space-between;
+      }
+
+      .journey-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hero {
+        padding-top: 52px;
+      }
+
+      .journey-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-card {
+        min-height: auto;
+      }
+    }
+
+
+    /* v0.17 customer experience improvements 1-4 */
+    .sim-report {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .sim-report-main {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(25, 72, 46, .07);
+      border: 1px solid rgba(25, 72, 46, .10);
+    }
+
+    .sim-report-main strong {
+      display: block;
+      color: var(--forest);
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .sim-report-main p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .sim-readiness {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .62);
+      border: 1px solid rgba(25, 72, 46, .08);
+    }
+
+    .sim-readiness-score {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at center, var(--card) 0 55%, transparent 56%),
+        conic-gradient(var(--forest) var(--readiness, 70%), rgba(25, 72, 46, .12) 0);
+      color: var(--forest);
+      font-weight: 950;
+      font-size: 18px;
+    }
+
+    .sim-readiness strong {
+      display: block;
+      color: var(--forest);
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .sim-readiness span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .sim-factor-list,
+    .sim-checklist {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sim-factor-list li,
+    .sim-checklist li {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 9px;
+      align-items: start;
+      padding: 11px 12px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .56);
+      border: 1px solid rgba(25, 72, 46, .07);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .sim-factor-list b,
+    .sim-checklist b {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(25, 72, 46, .10);
+      color: var(--forest);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .sim-result-box.full {
+      grid-column: 1 / -1;
+    }
+
+    .inquiry-summary {
+      grid-column: 1 / -1;
+      display: none;
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(25, 72, 46, .08), rgba(181, 150, 93, .08));
+      border: 1px solid rgba(25, 72, 46, .12);
+      box-shadow: 0 12px 32px rgba(16, 52, 32, .06);
+      margin-bottom: 18px;
+    }
+
+    .inquiry-summary.is-visible {
+      display: block;
+    }
+
+    .inquiry-summary h3 {
+      margin: 0 0 12px;
+      color: var(--forest);
+      font-size: 20px;
+      letter-spacing: -0.04em;
+    }
+
+    .inquiry-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .inquiry-summary-item {
+      padding: 11px 12px;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, .62);
+      border: 1px solid rgba(25, 72, 46, .07);
+    }
+
+    .inquiry-summary-item strong {
+      display: block;
+      color: var(--forest);
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+
+    .inquiry-summary-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.42;
+    }
+
+    .inquiry-summary-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 680px) {
+      .sim-readiness {
+        grid-template-columns: 1fr;
+      }
+
+      .sim-readiness-score {
+        width: 68px;
+        height: 68px;
+      }
+
+      .inquiry-summary-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* v0.18 selected step summary */
+    .sim-selected-value {
+      display: none;
+      margin-top: 10px;
+      padding: 11px 13px;
+      border-radius: 14px;
+      background: rgba(25, 72, 46, .08);
+      border: 1px solid rgba(25, 72, 46, .10);
+      color: var(--forest);
+      font-size: 14px;
+      font-weight: 880;
+      line-height: 1.45;
+    }
+
+    .sim-step.is-complete .sim-selected-value {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    .sim-step.is-complete .sim-step-copy::after {
+      content: "";
+    }
+
+    .sim-step.is-complete {
+      opacity: .78;
+    }
+
+    .sim-step.is-complete .sim-step-head strong {
+      color: var(--forest);
+    }
+
+    .sim-step.is-complete .sim-step-copy {
+      color: #7b877a;
+    }
+
+    @media (max-width: 680px) {
+      .sim-selected-value {
+        width: 100%;
+        display: none;
+      }
+
+      .sim-step.is-complete .sim-selected-value {
+        display: flex;
+      }
+    }
+
+
+    /* v0.19 result CTA placement */
+    .sim-result-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(25, 72, 46, .10);
+    }
+
+    .sim-result-actions .btn {
+      min-height: 48px;
+    }
+
+    @media (max-width: 680px) {
+      .sim-result-actions {
+        justify-content: stretch;
+      }
+
+      .sim-result-actions .btn {
+        width: 100%;
+      }
+    }
+
+
+    /* v0.21 inquiry simulator prompt */
+    .inquiry-sim-prompt {
+      grid-column: 1 / -1;
+      margin-bottom: 18px;
+      padding: 20px;
+      border-radius: var(--radius-md);
+      background:
+        linear-gradient(135deg, rgba(25, 72, 46, .94), rgba(16, 52, 32, .98)),
+        var(--forest);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 18px 48px rgba(16, 52, 32, .12);
+    }
+
+    .inquiry-sim-prompt::after {
+      content: "";
+      position: absolute;
+      right: -72px;
+      bottom: -92px;
+      width: 220px;
+      height: 220px;
+      background: url("/assets/illvii-pattern.svg") center / contain no-repeat;
+      filter: invert(93%) sepia(12%) saturate(355%) hue-rotate(351deg) brightness(101%) contrast(86%);
+      opacity: .13;
+      pointer-events: none;
+    }
+
+    .inquiry-sim-prompt-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .inquiry-sim-prompt .eyebrow {
+      color: var(--gold-soft);
+      margin-bottom: 8px;
+    }
+
+    .inquiry-sim-prompt h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      line-height: 1.25;
+      letter-spacing: -0.045em;
+      color: #fff;
+    }
+
+    .inquiry-sim-prompt p {
+      margin: 0;
+      color: rgba(255, 255, 255, .72);
+      font-size: 14px;
+      line-height: 1.62;
+    }
+
+    .inquiry-sim-prompt-actions {
+      display: grid;
+      gap: 8px;
+      justify-items: end;
+    }
+
+    .inquiry-sim-prompt .btn {
+      background: var(--cream);
+      color: var(--forest);
+      border-color: var(--cream);
+      white-space: nowrap;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, .12);
+    }
+
+    .inquiry-sim-prompt .text-link {
+      color: rgba(255, 255, 255, .72);
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .inquiry-sim-prompt.is-completed {
+      background:
+        linear-gradient(135deg, rgba(255, 250, 240, .92), rgba(246, 241, 231, .92));
+      color: var(--forest);
+      border: 1px solid rgba(25, 72, 46, .10);
+      box-shadow: 0 14px 36px rgba(16, 52, 32, .06);
+    }
+
+    .inquiry-sim-prompt.is-completed h3 {
+      color: var(--forest);
+    }
+
+    .inquiry-sim-prompt.is-completed p {
+      color: var(--muted);
+    }
+
+    .inquiry-sim-prompt.is-completed .eyebrow {
+      color: var(--gold);
+    }
+
+    .inquiry-sim-prompt.is-completed .btn,
+    .inquiry-sim-prompt.is-completed .text-link {
+      display: none;
+    }
+
+    @media (max-width: 760px) {
+      .inquiry-sim-prompt-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .inquiry-sim-prompt-actions {
+        justify-items: stretch;
+      }
+
+      .inquiry-sim-prompt .btn {
+        width: 100%;
+      }
+    }
+
+
+    /* v0.22 softer inquiry prompt */
+    .inquiry-sim-prompt {
+      padding: 18px;
+      background:
+        linear-gradient(135deg, rgba(25, 72, 46, .075), rgba(181, 150, 93, .08));
+      color: var(--forest);
+      border: 1px solid rgba(25, 72, 46, .12);
+      box-shadow: 0 12px 32px rgba(16, 52, 32, .055);
+    }
+
+    .inquiry-sim-prompt::after {
+      opacity: .055;
+      filter: none;
+    }
+
+    .inquiry-sim-prompt .eyebrow {
+      color: var(--gold);
+      margin-bottom: 6px;
+      font-size: 12px;
+    }
+
+    .inquiry-sim-prompt h3 {
+      color: var(--forest);
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: -0.035em;
+      margin-bottom: 7px;
+    }
+
+    .inquiry-sim-prompt p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .inquiry-sim-prompt .btn {
+      background: var(--forest);
+      color: #fff;
+      border-color: var(--forest);
+      box-shadow: 0 10px 24px rgba(16, 52, 32, .12);
+      min-height: 44px;
+      padding-inline: 16px;
+      font-size: 14px;
+    }
+
+    .inquiry-sim-prompt .text-link {
+      color: #697668;
+      font-size: 12px;
+    }
+
+    .inquiry-sim-prompt.is-completed {
+      background:
+        linear-gradient(135deg, rgba(25, 72, 46, .06), rgba(181, 150, 93, .07));
+      box-shadow: 0 10px 26px rgba(16, 52, 32, .045);
+    }
+
+
+    /* v0.23 result report UX and mobile spacing */
+    .sim-selected-summary {
+      margin: 18px 0 0;
+      padding: 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(25, 72, 46, .08), rgba(181, 150, 93, .08));
+      border: 1px solid rgba(25, 72, 46, .10);
+    }
+
+    .sim-selected-summary > strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--forest);
+      font-size: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .sim-selected-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .sim-selected-summary-grid span {
+      display: block;
+      padding: 11px 12px;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, .62);
+      border: 1px solid rgba(25, 72, 46, .07);
+      color: var(--forest);
+      font-size: 13px;
+      font-weight: 850;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    .sim-readiness {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+    }
+
+    .sim-readiness-kicker {
+      display: inline-flex;
+      margin-bottom: 5px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .sim-readiness-score-wrap {
+      display: grid;
+      justify-items: center;
+      gap: 4px;
+    }
+
+    .sim-readiness-score-wrap small {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .sim-readiness-score {
+      width: 68px;
+      height: 68px;
+      font-size: 17px;
+    }
+
+    .sim-reassurance {
+      margin-top: 16px;
+      padding: 17px 18px;
+      border-radius: 18px;
+      background: rgba(25, 72, 46, .07);
+      border: 1px solid rgba(25, 72, 46, .10);
+    }
+
+    .sim-reassurance strong {
+      display: block;
+      color: var(--forest);
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .sim-reassurance p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.58;
+    }
+
+    .sim-result-actions {
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .sim-result-actions .btn {
+      flex: 1 1 180px;
+      justify-content: center;
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      section {
+        padding: 52px 0;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 11.2vw, 54px);
+      }
+
+      .lead {
+        font-size: 17px;
+        line-height: 1.72;
+      }
+
+      .simulator-card-unified .simulator-progress,
+      .simulator-card-unified .simulator-form,
+      .simulator-card-unified .simulator-result {
+        margin: 16px;
+      }
+
+      .simulator-result {
+        padding: 20px;
+      }
+
+      .sim-result-top h3 {
+        font-size: 22px;
+      }
+
+      .sim-selected-summary {
+        padding: 15px;
+        margin-top: 14px;
+      }
+
+      .sim-selected-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .sim-selected-summary-grid span {
+        text-align: left;
+        padding: 10px 11px;
+      }
+
+      .sim-report {
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .sim-readiness {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .sim-readiness-score-wrap {
+        justify-items: start;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+      }
+
+      .sim-readiness-score {
+        width: 60px;
+        height: 60px;
+        font-size: 15px;
+      }
+
+      .sim-result-grid {
+        gap: 9px;
+        margin-top: 12px;
+      }
+
+      .sim-result-box {
+        padding: 13px;
+      }
+
+      .sim-factor-list li,
+      .sim-checklist li {
+        padding: 10px;
+      }
+
+      .sim-reassurance {
+        padding: 15px;
+      }
+
+      .sim-result-note {
+        margin-top: 10px;
+        font-size: 12px;
+      }
+
+      .sim-result-actions {
+        margin-top: 14px;
+        padding-top: 14px;
+        gap: 9px;
+      }
+
+      .sim-result-actions .btn {
+        width: 100%;
+        flex-basis: 100%;
+      }
+
+      .simulator-filled {
+        font-size: 12px;
+      }
+
+      .form-card {
+        padding: 22px;
+      }
+
+      .inquiry-sim-prompt {
+        padding: 16px;
+      }
+
+      .inquiry-sim-prompt h3 {
+        font-size: 18px;
+      }
+
+      .form-intro,
+      .inquiry-summary {
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .sim-selected-summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sim-options {
+        gap: 8px;
+      }
+
+      .sim-option span {
+        min-height: 52px;
+        padding: 11px;
+      }
+    }
+
+
+    /* v0.24 sticky header and table of contents */
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 104px;
+    }
+
+    .site-top {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      padding: 18px 0 8px;
+      transition: padding .22s ease, transform .22s ease;
+    }
+
+    .site-top.is-compact {
+      padding: 8px 0;
+    }
+
+    .site-top.is-compact .brand-line {
+      background: rgba(255, 250, 240, .86);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 12px 36px rgba(16, 52, 32, .11);
+      border-color: rgba(25, 72, 46, .10);
+    }
+
+    .site-top.is-compact .logo-symbol {
+      width: 50px;
+      height: 50px;
+    }
+
+    .site-top.is-compact .brand-name strong {
+      font-size: 17px;
+    }
+
+    .site-top.is-compact .brand-name small {
+      font-size: 12px;
+    }
+
+    .brand-line {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: background .2s ease, box-shadow .2s ease, border-color .2s ease, padding .2s ease;
+    }
+
+    .toc-toggle {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 42px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(25, 72, 46, .12);
+      background: rgba(255, 250, 240, .72);
+      color: var(--forest);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: background .16s ease, transform .16s ease, box-shadow .16s ease;
+    }
+
+    .toc-toggle:hover {
+      background: rgba(25, 72, 46, .08);
+      box-shadow: 0 10px 24px rgba(16, 52, 32, .08);
+    }
+
+    .toc-toggle:active {
+      transform: translateY(1px);
+    }
+
+    .toc-toggle-icon {
+      width: 18px;
+      display: grid;
+      gap: 4px;
+    }
+
+    .toc-toggle-icon i {
+      display: block;
+      height: 2px;
+      border-radius: 99px;
+      background: currentColor;
+    }
+
+    .toc-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 95;
+      background: rgba(12, 29, 18, .42);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .toc-backdrop.is-open {
+      display: block;
+    }
+
+    .toc-panel {
+      position: fixed;
+      right: max(18px, calc((100vw - var(--max)) / 2));
+      top: 92px;
+      z-index: 100;
+      width: min(420px, calc(100vw - 36px));
+      max-height: min(76vh, 720px);
+      overflow: auto;
+      padding: 22px;
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, rgba(255, 250, 240, .96), rgba(246, 241, 231, .94));
+      border: 1px solid rgba(25, 72, 46, .12);
+      box-shadow: 0 28px 90px rgba(12, 29, 18, .22);
+      transform: translateY(-8px) scale(.98);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .toc-panel.is-open {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .toc-panel-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      padding-bottom: 14px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(25, 72, 46, .10);
+    }
+
+    .toc-panel-head h2 {
+      margin: 6px 0 0;
+      color: var(--forest);
+      font-size: 25px;
+      line-height: 1.22;
+      letter-spacing: -0.045em;
+    }
+
+    .toc-close {
+      flex: 0 0 auto;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(25, 72, 46, .12);
+      background: rgba(25, 72, 46, .07);
+      color: var(--forest);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .toc-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .toc-list a {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 13px;
+      border-radius: 16px;
+      color: inherit;
+      border: 1px solid transparent;
+      transition: background .16s ease, border-color .16s ease, transform .16s ease;
+    }
+
+    .toc-list a:hover,
+    .toc-list a.is-active {
+      background: rgba(25, 72, 46, .075);
+      border-color: rgba(25, 72, 46, .10);
+    }
+
+    .toc-list a:active {
+      transform: translateY(1px);
+    }
+
+    .toc-list b {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(25, 72, 46, .10);
+      color: var(--forest);
+      font-size: 13px;
+      font-weight: 950;
+    }
+
+    .toc-list strong {
+      display: block;
+      color: var(--forest);
+      font-size: 15px;
+      line-height: 1.35;
+      letter-spacing: -0.025em;
+    }
+
+    .toc-list small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    body.toc-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 1080px) {
+      .toc-toggle-text {
+        display: inline;
+      }
+    }
+
+    @media (max-width: 760px) {
+      html {
+        scroll-padding-top: 86px;
+      }
+
+      .site-top {
+        padding: 10px 0 6px;
+      }
+
+      .brand-line {
+        gap: 10px;
+        padding: 9px 10px;
+        border-radius: 24px;
+      }
+
+      .logo-symbol {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-name strong {
+        font-size: 16px;
+        line-height: 1.22;
+      }
+
+      .brand-name small {
+        font-size: 11px;
+      }
+
+      .toc-toggle {
+        min-height: 40px;
+        padding: 0 12px;
+      }
+
+      .toc-toggle-text {
+        display: none;
+      }
+
+      .toc-panel {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        top: auto;
+        width: auto;
+        max-height: min(78vh, 680px);
+        border-radius: 28px;
+        padding: 20px;
+        transform: translateY(18px) scale(.98);
+      }
+
+      .toc-panel.is-open {
+        transform: translateY(0) scale(1);
+      }
+
+      .toc-panel-head h2 {
+        font-size: 23px;
+      }
+
+      .toc-list a {
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .brand-name small {
+        display: none;
+      }
+
+      .toc-panel {
+        padding: 18px;
+      }
+    }
+
+
+    /* v0.25 collapsed result detail sections */
+    .sim-result-detail {
+      grid-column: 1 / -1;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .62);
+      border: 1px solid rgba(25, 72, 46, .08);
+      overflow: hidden;
+    }
+
+    .sim-result-detail summary {
+      list-style: none;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      color: var(--forest);
+    }
+
+    .sim-result-detail summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .sim-result-detail summary strong {
+      display: block;
+      color: var(--forest);
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .sim-result-detail summary small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 650;
+    }
+
+    .sim-result-detail summary b {
+      min-width: 46px;
+      min-height: 32px;
+      padding: 0 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(25, 72, 46, .08);
+      color: var(--forest);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .sim-result-detail[open] summary {
+      border-bottom: 1px solid rgba(25, 72, 46, .08);
+    }
+
+    .sim-result-detail[open] summary b {
+      background: var(--forest);
+      color: #fff;
+    }
+
+    .sim-result-detail[open] summary b::before {
+      content: "접기";
+    }
+
+    .sim-result-detail[open] summary b {
+      font-size: 0;
+    }
+
+    .sim-result-detail[open] summary b::before {
+      font-size: 12px;
+    }
+
+    .sim-result-detail .sim-factor-list,
+    .sim-result-detail .sim-checklist {
+      padding: 14px;
+    }
+
+    .sim-result-detail .sim-factor-list li,
+    .sim-result-detail .sim-checklist li {
+      background: rgba(250, 244, 233, .64);
+    }
+
+    @media (max-width: 760px) {
+      .sim-result-detail summary {
+        padding: 14px;
+        gap: 10px;
+      }
+
+      .sim-result-detail summary b {
+        min-width: 42px;
+        min-height: 30px;
+      }
+
+      .sim-result-detail .sim-factor-list,
+      .sim-result-detail .sim-checklist {
+        padding: 12px;
+      }
+    }
+
   </style>
 </head>
 <body>
-  <header class="site-top">
+    <header class="site-top" id="siteHeader">
     <div class="wrap brand-line">
       <a class="logo-mark" href="#top" aria-label="일비 퍼퓨머리 하우스 홈">
         <img class="logo-symbol" src="/assets/illvii-logo.svg" alt="일비 퍼퓨머리 하우스 로고" />
         <span class="brand-name"><strong>일비 퍼퓨머리 하우스</strong><small>ILLVII Perfumery House</small></span>
       </a>
-      <span class="domain-chip">perfumery.kr</span>
+      <nav class="site-nav" aria-label="주요 이동">
+        <a href="#simulator">시뮬레이터</a>
+        <a href="#factory-journey">방문 순서</a>
+        <a href="#services">제작 범위</a>
+        <a href="#type-guide">시작 가이드</a>
+        <a href="#inquiry">문의하기</a>
+      </nav>
+      <button class="toc-toggle" type="button" id="tocToggle" aria-label="제작 안내 목차 열기" aria-expanded="false" aria-controls="tocPanel">
+        <span class="toc-toggle-text">목차</span>
+        <span class="toc-toggle-icon" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </span>
+      </button>
     </div>
   </header>
+
+  <div class="toc-backdrop" id="tocBackdrop" hidden></div>
+  <aside class="toc-panel" id="tocPanel" aria-hidden="true" aria-label="제작 안내 목차">
+    <div class="toc-panel-head">
+      <div>
+        <span class="eyebrow">Contents</span>
+        <h2>제작 안내 목차</h2>
+      </div>
+      <button class="toc-close" type="button" id="tocClose" aria-label="목차 닫기">닫기</button>
+    </div>
+    <nav class="toc-list" aria-label="페이지 목차">
+      <a href="#top"><b>00</b><span><strong>처음으로</strong><small>브랜드와 전체 안내</small></span></a>
+      <a href="#simulator"><b>01</b><span><strong>제작 조건 시뮬레이터</strong><small>내 조건으로 가능성과 비용 감각 확인</small></span></a>
+      <a href="#factory-journey"><b>02</b><span><strong>공장 방문 순서</strong><small>실제 상담에서 확인하는 흐름</small></span></a>
+      <a href="#services"><b>03</b><span><strong>제작 범위</strong><small>향 개발부터 완제품까지</small></span></a>
+      <a href="#type-guide"><b>04</b><span><strong>제작 유형별 시작 가이드</strong><small>브랜드, 굿즈, 샘플별 시작점</small></span></a>
+      <a href="#process"><b>05</b><span><strong>진행 과정</strong><small>문의 후 제작까지 이어지는 단계</small></span></a>
+      <a href="#faq"><b>06</b><span><strong>자주 묻는 질문</strong><small>처음 제작자가 많이 묻는 내용</small></span></a>
+      <a href="#inquiry"><b>07</b><span><strong>향수 제작 문의하기</strong><small>시뮬레이션 결과 또는 직접 문의</small></span></a>
+    </nav>
+  </aside>
   <div class="brand-pattern" aria-hidden="true"></div>
 
   <main id="top">
@@ -831,38 +3418,252 @@
       <div class="wrap hero-grid">
         <div>
           <span class="eyebrow">ILLVII Perfumery House</span>
-          <h1>향수를 만들고 싶은 순간,<br />일비 퍼퓨머리 하우스에서.</h1>
-          <p class="lead">브랜드 향수, 굿즈 향수, 소량 테스트, PB 제품까지. 목적과 상황에 맞는 향수 제작 방향을 함께 정리합니다.</p>
+          <h1>공장에 방문한 것처럼,<br />제작 조건부터 차근히.</h1>
+          <p class="lead">처음 향수를 만드는 분도 현재 상황을 넣어보고, 가능한 제작 범위와 비용 감각을 먼저 확인할 수 있도록 구성했습니다.</p>
           <div class="hero-actions">
-            <a class="btn" href="#inquiry">제작 문의하기</a>
-            <a class="btn secondary" href="#process">진행 과정 보기</a>
+            <a class="btn" href="#simulator">시뮬레이션 시작하기</a>
+            <a class="btn secondary" href="#factory-journey">방문 순서 보기</a>
           </div>
           <div class="hero-note" aria-label="핵심 안내">
-            <div class="note-card"><strong>처음 제작</strong><span>어디서 시작할지 모르는 단계부터 상담</span></div>
-            <div class="note-card"><strong>소량 테스트</strong><span>목적과 예산에 맞는 현실적 방식 검토</span></div>
-            <div class="note-card"><strong>제품화</strong><span>향, 용기, 충진, 패키지 흐름 정리</span></div>
+            <div class="note-card"><strong>조건 확인</strong><span>목적, 용량, 수량, 범위를 먼저 정리</span></div>
+            <div class="note-card"><strong>비용 감각</strong><span>확정 견적 전 대략적인 범위 확인</span></div>
+            <div class="note-card"><strong>상담 연결</strong><span>시뮬레이션 결과를 문의폼에 자동 입력</span></div>
           </div>
         </div>
-        <aside class="hero-panel" aria-label="제작 상담 요약">
-          <h2 class="panel-title">제작 상담에서 먼저 보는 것</h2>
+        <aside class="hero-panel" aria-label="방문자 안내">
+          <h2 class="panel-title">의뢰자가 가장 먼저 궁금한 것</h2>
           <ul class="panel-list">
-            <li><b>1</b><span>어떤 목적으로 향수를 만들고 싶은지</span></li>
-            <li><b>2</b><span>예상 수량, 용량, 일정, 예산이 어느 정도인지</span></li>
-            <li><b>3</b><span>향 개발만 필요한지, 완제품 제작까지 필요한지</span></li>
-            <li><b>4</b><span>현재 단계에서 무리 없는 제작 방식은 무엇인지</span></li>
+            <li><b>1</b><span>내 상황에서도 향수 제작이 가능한지</span></li>
+            <li><b>2</b><span>수량과 용량에 따라 비용이 어느 정도 달라지는지</span></li>
+            <li><b>3</b><span>향 개발, 충진, 라벨, 단상자 중 어디까지 필요한지</span></li>
+            <li><b>4</b><span>문의 후 어떤 순서로 실제 제작이 이어지는지</span></li>
           </ul>
         </aside>
       </div>
     </section>
 
-    <section id="services">
+                <section class="simulator-section" id="simulator">
+      <div class="wrap simulator-shell simulator-shell-unified">
+        <div class="simulator-card simulator-card-unified">
+          <div class="simulator-start simulator-start-unified" id="simulatorStartPanel">
+            <div class="simulator-start-copy">
+              <span class="eyebrow">Simulator</span>
+              <h2>내 조건으로<br />제작 가능성을 먼저 확인하세요.</h2>
+              <p>공장에 방문했을 때 가장 먼저 묻는 질문들을 순서대로 담았습니다. 현재 상황에 맞는 제작 방향과 비용 감각을 먼저 확인한 뒤 상담으로 이어집니다.</p>
+            </div>
+
+            <div class="simulator-points">
+              <div class="simulator-point"><b>1</b><span>시작하기를 누른 뒤 한 단계씩 선택합니다.</span></div>
+              <div class="simulator-point"><b>2</b><span>선택이 끝나면 제작 방향과 예상 비용 감각을 확인합니다.</span></div>
+              <div class="simulator-point"><b>3</b><span>결과를 문의폼에 자동 입력해 상담 준비 시간을 줄입니다.</span></div>
+            </div>
+
+            <div class="simulator-start-action">
+              <button class="btn simulator-start-button" type="button" id="startSimulatorButton">시뮬레이션 시작하기</button>
+              <span>빈 문의폼을 바로 작성하지 않아도 됩니다.</span>
+            </div>
+          </div>
+
+          <div class="simulator-progress" id="simulatorProgress" hidden>
+            <div class="sim-progress-top">
+              <strong id="simProgressText">1 / 5</strong>
+              <span id="simProgressLabel">제작 목적 선택</span>
+            </div>
+            <div class="sim-progress-bar" aria-hidden="true">
+              <span id="simProgressBar"></span>
+            </div>
+          </div>
+
+          <div class="simulator-form is-locked" id="simulatorForm" aria-label="향수 제작 비용 미리보기">
+            <div class="sim-step is-active" data-step="1">
+              <div class="sim-step-head"><b>01</b><strong>무엇을 만들고 싶으신가요?</strong></div>
+              <p class="sim-step-copy">가장 가까운 제작 목적을 선택해주세요.</p>
+              <div class="sim-options">
+                <label class="sim-option"><input type="radio" name="simProjectType" value="브랜드 향수"><span>브랜드 향수</span></label>
+                <label class="sim-option"><input type="radio" name="simProjectType" value="굿즈 향수"><span>굿즈 향수</span></label>
+                <label class="sim-option"><input type="radio" name="simProjectType" value="소량 테스트"><span>소량 테스트</span></label>
+                <label class="sim-option"><input type="radio" name="simProjectType" value="향 개발"><span>향 개발</span></label>
+                <label class="sim-option"><input type="radio" name="simProjectType" value="PB 제품"><span>PB 제품</span></label>
+                <label class="sim-option"><input type="radio" name="simProjectType" value="샘플 제작"><span>샘플 제작</span></label>
+              </div>
+            </div>
+
+            <div class="sim-step" data-step="2" hidden>
+              <div class="sim-step-head"><b>02</b><strong>어느 정도 용량을 생각하고 계신가요?</strong></div>
+              <p class="sim-step-copy">아직 정해지지 않았다면 미정을 선택해도 됩니다.</p>
+              <div class="sim-options">
+                <label class="sim-option"><input type="radio" name="simVolume" value="3ml"><span>3ml</span></label>
+                <label class="sim-option"><input type="radio" name="simVolume" value="5ml"><span>5ml</span></label>
+                <label class="sim-option"><input type="radio" name="simVolume" value="15ml"><span>15ml</span></label>
+                <label class="sim-option"><input type="radio" name="simVolume" value="30ml"><span>30ml</span></label>
+                <label class="sim-option"><input type="radio" name="simVolume" value="50ml"><span>50ml</span></label>
+                <label class="sim-option"><input type="radio" name="simVolume" value="미정"><span>미정</span></label>
+              </div>
+            </div>
+
+            <div class="sim-step" data-step="3" hidden>
+              <div class="sim-step-head"><b>03</b><strong>예상 수량은 어느 정도인가요?</strong></div>
+              <p class="sim-step-copy">정확한 수량이 아니어도 괜찮습니다. 가까운 범위를 선택해주세요.</p>
+              <div class="sim-options">
+                <label class="sim-option"><input type="radio" name="simQuantity" value="100개 이하"><span>100개 이하</span></label>
+                <label class="sim-option"><input type="radio" name="simQuantity" value="100~300개"><span>100~300개</span></label>
+                <label class="sim-option"><input type="radio" name="simQuantity" value="300~500개"><span>300~500개</span></label>
+                <label class="sim-option"><input type="radio" name="simQuantity" value="500~1,000개"><span>500~1,000개</span></label>
+                <label class="sim-option"><input type="radio" name="simQuantity" value="1,000개 이상"><span>1,000개 이상</span></label>
+                <label class="sim-option"><input type="radio" name="simQuantity" value="미정"><span>미정</span></label>
+              </div>
+            </div>
+
+            <div class="sim-step" data-step="4" hidden>
+              <div class="sim-step-head"><b>04</b><strong>어디까지 필요하신가요?</strong></div>
+              <p class="sim-step-copy">잘 모르겠다면 마지막 항목을 선택해도 됩니다.</p>
+              <div class="sim-options">
+                <label class="sim-option"><input type="radio" name="simScope" value="향 개발만"><span>향 개발만</span></label>
+                <label class="sim-option"><input type="radio" name="simScope" value="샘플 제작"><span>샘플 제작</span></label>
+                <label class="sim-option"><input type="radio" name="simScope" value="충진까지"><span>충진까지</span></label>
+                <label class="sim-option"><input type="radio" name="simScope" value="라벨/단상자까지"><span>라벨/단상자까지</span></label>
+                <label class="sim-option"><input type="radio" name="simScope" value="완제품 형태"><span>완제품 형태</span></label>
+                <label class="sim-option"><input type="radio" name="simScope" value="잘 모르겠음"><span>잘 모르겠음</span></label>
+              </div>
+            </div>
+
+            <div class="sim-step" data-step="5" hidden>
+              <div class="sim-step-head"><b>05</b><strong>현재 어느 단계에 가까우신가요?</strong></div>
+              <p class="sim-step-copy">지금 상황을 기준으로 선택해주세요.</p>
+              <div class="sim-options">
+                <label class="sim-option"><input type="radio" name="simStage" value="아이디어 단계"><span>아이디어 단계</span></label>
+                <label class="sim-option"><input type="radio" name="simStage" value="방향 검토 단계"><span>방향 검토 단계</span></label>
+                <label class="sim-option"><input type="radio" name="simStage" value="제작 준비 단계"><span>제작 준비 단계</span></label>
+                <label class="sim-option"><input type="radio" name="simStage" value="출시 일정 있음"><span>출시 일정 있음</span></label>
+              </div>
+            </div>
+
+            <div class="simulator-actions" id="simulatorActions" hidden>
+              <button class="btn secondary" type="button" id="restartSimulatorButton">다시 선택하기</button>
+              <button class="btn" type="button" id="simulateButton">결과 미리보기</button>
+            </div>
+          </div>
+
+          <article class="simulator-result" id="simulatorResult" aria-live="polite">
+            <div class="sim-result-top">
+              <div>
+                <span class="sim-badge" id="simulatorBadge">Preview</span>
+                <h3 id="simulatorTitle">제작 방향 미리보기</h3>
+              </div>
+            </div>
+
+            <div class="sim-selected-summary" id="simSelectedSummary">
+              <strong>선택한 조건</strong>
+              <div class="sim-selected-summary-grid">
+                <span id="simSumProject">-</span>
+                <span id="simSumScale">-</span>
+                <span id="simSumScope">-</span>
+                <span id="simSumStage">-</span>
+              </div>
+            </div>
+
+            <div class="sim-report">
+              <div class="sim-report-main">
+                <strong>현재 조건 진단</strong>
+                <p id="simulatorDiagnosis">선택한 조건을 바탕으로 제작 방향을 정리합니다.</p>
+              </div>
+
+              <div class="sim-readiness" id="simReadiness">
+                <div>
+                  <span class="sim-readiness-kicker">상담 상태</span>
+                  <strong id="simReadinessTitle">상담 준비도</strong>
+                  <span id="simReadinessText">선택한 조건을 기준으로 상담 준비 정도를 확인합니다.</span>
+                </div>
+                <div class="sim-readiness-score-wrap">
+                  <div class="sim-readiness-score" id="simReadinessScore">70%</div>
+                  <small>준비도</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="sim-result-grid">
+              <div class="sim-result-box"><strong>추천 시작 방식</strong><span id="simulatorStart">-</span></div>
+              <div class="sim-result-box"><strong>예상 비용 감각</strong><span id="simulatorBudget">-</span></div>
+              <div class="sim-result-box"><strong>먼저 확인할 것</strong><span id="simulatorCheck">-</span></div>
+              <div class="sim-result-box"><strong>문의 시 자동 입력</strong><span id="simulatorAutofill">선택한 조건이 문의폼에 정리됩니다.</span></div>
+              <details class="sim-result-detail full">
+                <summary>
+                  <span>
+                    <strong>비용이 달라지는 이유</strong>
+                    <small>향 개발, 수량, 용량, 패키지에 따라 달라집니다.</small>
+                  </span>
+                  <b aria-hidden="true">열기</b>
+                </summary>
+                <ul class="sim-factor-list" id="simCostFactors"></ul>
+              </details>
+              <details class="sim-result-detail full">
+                <summary>
+                  <span>
+                    <strong>상담 전 준비하면 좋은 것</strong>
+                    <small>상담이 빨라지는 체크리스트를 확인할 수 있습니다.</small>
+                  </span>
+                  <b aria-hidden="true">열기</b>
+                </summary>
+                <ul class="sim-checklist" id="simChecklist"></ul>
+              </details>
+            </div>
+            <div class="sim-reassurance">
+              <strong>부담 없이 다음 단계로 넘어가도 괜찮습니다.</strong>
+              <p>이 결과는 확정 견적이 아니라 상담을 빠르게 시작하기 위한 정리 내용입니다. 부족하거나 잘못 선택한 부분은 상담 과정에서 다시 확인합니다.</p>
+            </div>
+            <p class="sim-result-note" id="simulatorNote">실제 비용은 향 개발 여부, 원료, 용기, 부자재, 포장, 납기 조건에 따라 달라질 수 있습니다.</p>
+            <div class="sim-result-actions">
+              <button class="btn secondary" type="button" id="resultRestartSimulatorButton">조건 다시 선택하기</button>
+              <button class="btn" type="button" id="simulatorToInquiry" disabled>이 조건으로 문의하기</button>
+            </div>
+            <div class="simulator-filled" id="simulatorFilled">선택한 조건을 문의폼에 반영했습니다.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="factory-journey" class="factory-journey">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="eyebrow">What we make</span>
-            <h2>이런 향수 제작을<br />도와드립니다.</h2>
+            <span class="eyebrow">Factory Visit</span>
+            <h2>공장에 방문하면<br />이 순서로 확인하게 됩니다.</h2>
           </div>
-          <p>거창한 준비가 없어도 괜찮습니다. 만들고 싶은 이유와 상황을 먼저 듣고, 가능한 제작 흐름을 정리합니다.</p>
+          <p>온라인에서도 같은 순서로 이해할 수 있도록 구성했습니다. 먼저 조건을 가늠하고, 필요한 범위를 좁힌 뒤, 상담으로 이어집니다.</p>
+        </div>
+        <div class="journey-grid">
+          <article class="journey-card">
+            <span>01</span>
+            <h3>무엇을 만들지</h3>
+            <p>판매용 브랜드 향수인지, 굿즈인지, 샘플인지 목적을 먼저 확인합니다.</p>
+          </article>
+          <article class="journey-card">
+            <span>02</span>
+            <h3>어느 정도 규모인지</h3>
+            <p>희망 용량과 예상 수량을 기준으로 가능한 제작 방식을 좁힙니다.</p>
+          </article>
+          <article class="journey-card">
+            <span>03</span>
+            <h3>어디까지 맡길지</h3>
+            <p>향 개발, 충진, 라벨, 단상자, 완제품 범위를 구분합니다.</p>
+          </article>
+          <article class="journey-card">
+            <span>04</span>
+            <h3>비용 감각과 다음 단계</h3>
+            <p>정확한 견적 전, 상담에서 확인해야 할 조건과 비용 범위를 정리합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Production Scope</span>
+            <h2>제작 범위는<br />이렇게 나뉩니다.</h2>
+          </div>
+          <p>의뢰자가 헷갈리기 쉬운 범위를 나누어 보여드립니다. 필요한 부분만 선택해도 되고, 아직 모르면 시뮬레이터에서 먼저 확인해도 됩니다.</p>
         </div>
         <div class="cards">
           <article class="card"><span class="num">01</span><h3>브랜드 향수</h3><p>자체 브랜드 출시를 위한 향 개발과 제품 구성 방향을 검토합니다.</p></article>
@@ -910,7 +3711,190 @@
       </div>
     </section>
 
-    <section id="process">
+        <section id="type-guide">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Start Guide</span>
+            <h2>제작 유형별로<br />시작점을 먼저 잡아보세요.</h2>
+          </div>
+          <p>처음에는 전체를 다 읽지 않아도 됩니다. 가장 가까운 유형을 하나만 열어보고, 내 상황에 맞는 시작점만 먼저 확인해보세요.</p>
+        </div>
+
+        <div class="type-guide">
+          <div class="start-lanes" aria-label="제작 시작 단계">
+            <article class="start-lane">
+              <b>01</b>
+              <h4>아이디어 단계</h4>
+              <p>향, 용량, 수량이 아직 정해지지 않았다면 만들고 싶은 이유부터 정리합니다.</p>
+            </article>
+            <article class="start-lane">
+              <b>02</b>
+              <h4>방향 검토 단계</h4>
+              <p>컨셉이나 참고 향은 있지만 제품 사양이 불분명하다면 샘플 방향부터 봅니다.</p>
+            </article>
+            <article class="start-lane">
+              <b>03</b>
+              <h4>제작 준비 단계</h4>
+              <p>수량, 용량, 일정이 어느 정도 있다면 견적과 생산 흐름을 맞춥니다.</p>
+            </article>
+          </div>
+
+          <div class="type-intro type-intro-after">
+            <h3>이제 가까운 제작 유형을 하나만 열어보세요.</h3>
+            <p>위 단계 중 어디에 가까운지 먼저 확인했다면, 아래 제작 유형에서 내 상황과 가장 비슷한 항목을 하나만 열어보면 됩니다. 필요한 내용은 펼쳐서 보고, 다른 유형을 열면 기존 내용은 자동으로 닫힙니다.</p>
+          </div>
+
+          <div class="type-accordion" data-single-accordion="type-guide">
+            <article class="type-accordion-item is-open">
+              <button class="type-toggle" type="button" aria-expanded="true">
+                <span class="type-toggle-main">
+                  <span class="type-kicker">판매용 제품</span>
+                  <span class="type-toggle-title"><strong>브랜드 향수</strong><span>자체 브랜드로 판매할 향수를 준비하는 경우</span></span>
+                  <span class="type-summary">브랜드 컨셉, 판매 채널, 희망 가격대를 기준으로 향과 제품 구성을 함께 검토합니다.</span>
+                </span>
+                <span class="type-toggle-action" aria-hidden="true"><span class="type-action-text">접기</span><span class="type-action-arrow">↑</span></span>
+              </button>
+              <div class="type-panel">
+                <div class="type-panel-inner">
+                  <div class="type-steps">
+                    <div class="type-step"><strong>먼저 정할 것</strong><span>브랜드 컨셉, 판매 채널, 희망 가격대</span></div>
+                    <div class="type-step"><strong>미정이어도 되는 것</strong><span>향 방향, 정확한 수량, 용기 사양</span></div>
+                    <div class="type-step"><strong>다음 단계</strong><span>컨셉을 향 방향으로 정리하고 샘플 제작 범위를 검토합니다.</span></div>
+                  </div>
+                  <div class="type-panel-actions">
+                    <a class="type-link" href="#inquiry" data-project-type="브랜드 향수">브랜드 향수로 문의하기</a>
+                    <p class="type-panel-note">판매용 제품은 향뿐 아니라 단가, 용량, 포장, 판매 방식까지 함께 보는 것이 좋습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="type-accordion-item">
+              <button class="type-toggle" type="button" aria-expanded="false">
+                <span class="type-toggle-main">
+                  <span class="type-kicker">행사·공간·콘텐츠</span>
+                  <span class="type-toggle-title"><strong>굿즈 향수</strong><span>브랜드나 콘텐츠를 향으로 기억하게 만들고 싶은 경우</span></span>
+                  <span class="type-summary">사용 목적, 증정/판매 여부, 필요한 납기를 기준으로 가능한 용량과 제작 방식을 검토합니다.</span>
+                </span>
+                <span class="type-toggle-action" aria-hidden="true"><span class="type-action-text">자세히 보기</span><span class="type-action-arrow">↓</span></span>
+              </button>
+              <div class="type-panel">
+                <div class="type-panel-inner">
+                  <div class="type-steps">
+                    <div class="type-step"><strong>먼저 정할 것</strong><span>사용 목적, 증정/판매 여부, 필요한 납기</span></div>
+                    <div class="type-step"><strong>미정이어도 되는 것</strong><span>정확한 향 표현, 라벨 문구, 포장 수준</span></div>
+                    <div class="type-step"><strong>다음 단계</strong><span>예상 수량과 일정에 맞춰 가능한 용량과 제작 방식을 검토합니다.</span></div>
+                  </div>
+                  <div class="type-panel-actions">
+                    <a class="type-link" href="#inquiry" data-project-type="굿즈 향수">굿즈 향수로 문의하기</a>
+                    <p class="type-panel-note">행사, 공간, 아티스트, 콘텐츠 굿즈는 목적과 전달 방식이 명확할수록 방향을 잡기 쉽습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="type-accordion-item">
+              <button class="type-toggle" type="button" aria-expanded="false">
+                <span class="type-toggle-main">
+                  <span class="type-kicker">시장 반응 확인</span>
+                  <span class="type-toggle-title"><strong>소량 테스트</strong><span>본생산 전에 반응을 먼저 보고 싶은 경우</span></span>
+                  <span class="type-summary">완성도를 무리하게 높이기보다 테스트 목적에 맞는 최소 구성을 먼저 확인합니다.</span>
+                </span>
+                <span class="type-toggle-action" aria-hidden="true"><span class="type-action-text">자세히 보기</span><span class="type-action-arrow">↓</span></span>
+              </button>
+              <div class="type-panel">
+                <div class="type-panel-inner">
+                  <div class="type-steps">
+                    <div class="type-step"><strong>먼저 정할 것</strong><span>테스트 목적, 대략 수량, 사용자 반응을 볼 방식</span></div>
+                    <div class="type-step"><strong>미정이어도 되는 것</strong><span>최종 패키지, 정식 판매가, 전체 라인업</span></div>
+                    <div class="type-step"><strong>다음 단계</strong><span>샘플 또는 소량 제품으로 가능한 현실적인 범위를 확인합니다.</span></div>
+                  </div>
+                  <div class="type-panel-actions">
+                    <a class="type-link" href="#inquiry" data-project-type="소량 테스트">소량 테스트로 문의하기</a>
+                    <p class="type-panel-note">테스트는 완성품을 확정하기 전, 반응을 볼 수 있는 작은 단위로 설계하는 것이 좋습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="type-accordion-item">
+              <button class="type-toggle" type="button" aria-expanded="false">
+                <span class="type-toggle-main">
+                  <span class="type-kicker">컨셉을 향으로</span>
+                  <span class="type-toggle-title"><strong>향 개발</strong><span>생산보다 먼저 향의 방향을 잡고 싶은 경우</span></span>
+                  <span class="type-summary">말로 된 컨셉, 분위기, 타깃을 실제 시향 가능한 샘플 방향으로 옮기는 단계입니다.</span>
+                </span>
+                <span class="type-toggle-action" aria-hidden="true"><span class="type-action-text">자세히 보기</span><span class="type-action-arrow">↓</span></span>
+              </button>
+              <div class="type-panel">
+                <div class="type-panel-inner">
+                  <div class="type-steps">
+                    <div class="type-step"><strong>먼저 정할 것</strong><span>표현하고 싶은 분위기, 타깃, 피하고 싶은 향</span></div>
+                    <div class="type-step"><strong>미정이어도 되는 것</strong><span>용기, 수량, 패키지, 출시 일정</span></div>
+                    <div class="type-step"><strong>다음 단계</strong><span>참고 향과 키워드를 바탕으로 샘플 방향을 정리합니다.</span></div>
+                  </div>
+                  <div class="type-panel-actions">
+                    <a class="type-link" href="#inquiry" data-project-type="향 개발">향 개발로 문의하기</a>
+                    <p class="type-panel-note">제품 사양이 없어도 괜찮습니다. 향의 감각과 방향을 먼저 잡는 상담부터 시작할 수 있습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="type-accordion-item">
+              <button class="type-toggle" type="button" aria-expanded="false">
+                <span class="type-toggle-main">
+                  <span class="type-kicker">자체 상품화</span>
+                  <span class="type-toggle-title"><strong>PB 제품</strong><span>매장이나 유통 채널에 맞는 자체 상품을 준비하는 경우</span></span>
+                  <span class="type-summary">판매처, 타깃 고객, 희망 소비자가를 기준으로 용량, 수량, 패키지 수준을 검토합니다.</span>
+                </span>
+                <span class="type-toggle-action" aria-hidden="true"><span class="type-action-text">자세히 보기</span><span class="type-action-arrow">↓</span></span>
+              </button>
+              <div class="type-panel">
+                <div class="type-panel-inner">
+                  <div class="type-steps">
+                    <div class="type-step"><strong>먼저 정할 것</strong><span>판매처, 타깃 고객, 희망 소비자가</span></div>
+                    <div class="type-step"><strong>미정이어도 되는 것</strong><span>향 세부 노트, 라벨 디자인, 정확한 원가</span></div>
+                    <div class="type-step"><strong>다음 단계</strong><span>가격대와 유통 방식에 맞춰 용량, 수량, 패키지를 검토합니다.</span></div>
+                  </div>
+                  <div class="type-panel-actions">
+                    <a class="type-link" href="#inquiry" data-project-type="PB 제품">PB 제품으로 문의하기</a>
+                    <p class="type-panel-note">PB 제품은 향의 취향뿐 아니라 반복 판매와 운영 가능한 단가 구조를 함께 보는 것이 중요합니다.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="type-accordion-item">
+              <button class="type-toggle" type="button" aria-expanded="false">
+                <span class="type-toggle-main">
+                  <span class="type-kicker">검토용 시향</span>
+                  <span class="type-toggle-title"><strong>샘플 제작</strong><span>내부 검토나 제안을 위해 작은 단위로 확인하고 싶은 경우</span></span>
+                  <span class="type-summary">샘플 목적, 필요한 개수, 확인하고 싶은 향 방향을 기준으로 제작 가능 일정을 확인합니다.</span>
+                </span>
+                <span class="type-toggle-action" aria-hidden="true"><span class="type-action-text">자세히 보기</span><span class="type-action-arrow">↓</span></span>
+              </button>
+              <div class="type-panel">
+                <div class="type-panel-inner">
+                  <div class="type-steps">
+                    <div class="type-step"><strong>먼저 정할 것</strong><span>샘플 목적, 필요한 개수, 확인하고 싶은 향 방향</span></div>
+                    <div class="type-step"><strong>미정이어도 되는 것</strong><span>본생산 여부, 최종 용기, 판매가</span></div>
+                    <div class="type-step"><strong>다음 단계</strong><span>필요한 샘플 형태와 제작 가능 일정을 확인합니다.</span></div>
+                  </div>
+                  <div class="type-panel-actions">
+                    <a class="type-link" href="#inquiry" data-project-type="샘플 제작">샘플 제작으로 문의하기</a>
+                    <p class="type-panel-note">샘플 제작은 큰 결정을 하기 전에 향 방향이나 제안 가능성을 확인하는 용도로 활용하기 좋습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="flow-summary" aria-label="문의 후 전체 흐름">
+            <strong>진행 과정은 이렇게 이어집니다.</strong>
+            <p>문의 접수 후 제작 목적과 현재 단계를 먼저 확인합니다. 필요한 경우 참고 향, 수량, 용량, 일정, 예산 범위를 추가로 질문드리고, 제작 가능 범위가 맞으면 샘플 제작이나 견적 검토로 이어집니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="process">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -946,30 +3930,34 @@
         <div class="section-head">
           <div>
             <span class="eyebrow">FAQ</span>
-            <h2>자주 묻는 질문</h2>
+            <h2>문의 전 많이<br />걱정하는 부분들</h2>
           </div>
-          <p>문의 전 막히기 쉬운 부분을 먼저 정리했습니다.</p>
+          <p>처음 향수를 만드는 분들이 가장 많이 망설이는 지점을 기준으로 정리했습니다.</p>
         </div>
         <div class="faq-list">
           <details open>
-            <summary>최소 수량은 어느 정도부터 가능한가요?</summary>
-            <p>제작 방식, 용기, 부자재, 충진 방식에 따라 달라집니다. 소량 테스트부터 본생산까지 상황을 먼저 확인한 뒤 가능한 범위를 안내드립니다.</p>
+            <summary><span><span class="faq-tag">처음</span>처음 향수를 만드는 사람도 문의할 수 있나요?</span></summary>
+            <p>가능합니다. 수량, 예산, 용기, 향 방향이 모두 정해져 있지 않아도 괜찮습니다. 현재 단계에서 어떤 정보를 먼저 정리해야 하는지부터 함께 확인합니다.</p>
           </details>
           <details>
-            <summary>향만 개발할 수도 있나요?</summary>
-            <p>가능합니다. 브랜드 컨셉이나 사용 목적에 맞춰 향 방향을 정리하고 샘플 제작을 검토할 수 있습니다.</p>
+            <summary><span><span class="faq-tag">수량</span>최소 수량이 정해져 있나요?</span></summary>
+            <p>제작 방식, 용기, 부자재, 충진 방식에 따라 달라집니다. 처음에는 정확한 수량보다 “테스트용인지, 판매용인지, 증정용인지”를 알려주시면 가능한 범위를 검토하기 쉽습니다.</p>
           </details>
           <details>
-            <summary>굿즈 향수도 제작 가능한가요?</summary>
-            <p>가능합니다. 행사, 브랜드, 공간, 콘텐츠 굿즈 등 목적에 맞춰 제품 구성을 함께 검토합니다.</p>
+            <summary><span><span class="faq-tag">단계</span>향만 개발하고 생산은 나중에 해도 되나요?</span></summary>
+            <p>가능합니다. 향 방향을 먼저 잡고, 샘플 반응이나 예산 상황을 본 뒤 용기·충진·패키지 단계로 넘어가는 방식도 검토할 수 있습니다.</p>
           </details>
           <details>
-            <summary>라벨이나 단상자까지 함께 가능한가요?</summary>
-            <p>프로젝트 상황에 따라 라벨, 단상자, 충진, 발송까지 함께 검토할 수 있습니다.</p>
+            <summary><span><span class="faq-tag">굿즈</span>굿즈용 소량 향수도 가능한가요?</span></summary>
+            <p>가능 여부는 수량, 용량, 포장 방식에 따라 달라집니다. 행사, 공간, 브랜드, 콘텐츠 굿즈처럼 목적이 분명하면 구성 방향을 더 빠르게 잡을 수 있습니다.</p>
           </details>
           <details>
-            <summary>문의할 때 무엇을 준비하면 좋나요?</summary>
-            <p>제작 목적, 예상 수량, 원하는 용량, 일정, 예산, 참고 향이나 브랜드 컨셉이 있으면 상담이 더 빠르게 진행됩니다.</p>
+            <summary><span><span class="faq-tag">예산</span>예산이 정해지지 않아도 문의할 수 있나요?</span></summary>
+            <p>가능합니다. 다만 예산 범위가 있으면 용량, 수량, 패키지 수준을 현실적으로 맞추기 쉽습니다. 아직 미정이라면 “대략적인 희망 규모”만 적어주셔도 됩니다.</p>
+          </details>
+          <details>
+            <summary><span><span class="faq-tag">견적</span>문의하면 바로 견적이 나오나요?</span></summary>
+            <p>바로 확정 견적이 나오기보다, 먼저 제작 목적과 범위를 확인합니다. 향 개발, 용기, 수량, 패키지, 일정이 정리된 뒤에 더 현실적인 견적 안내가 가능합니다.</p>
           </details>
         </div>
       </div>
@@ -989,22 +3977,55 @@
         </aside>
 
         <form id="inquiryForm" action="https://script.google.com/macros/s/AKfycby8gRVygaoiTBRZ1zts5dEai8MQ3iVxOBBj7oaOqbpE-2oq37Uea38RZK76TLifqFc8/exec" method="post" target="inquirySubmitFrame" accept-charset="UTF-8" novalidate>
+          <div class="inquiry-sim-prompt" id="inquirySimPrompt">
+            <div class="inquiry-sim-prompt-inner">
+              <div>
+                <span class="eyebrow">Before Contact</span>
+                <h3>작성 전에 조건을 먼저 정리해볼 수 있습니다.</h3>
+                <p>시뮬레이션을 진행하면 제작 목적, 용량, 수량, 필요한 범위가 문의폼에 자동 입력됩니다. 바로 작성해도 괜찮지만, 처음이라면 먼저 정리해보는 것을 권장합니다.</p>
+              </div>
+              <div class="inquiry-sim-prompt-actions">
+                <a class="btn" href="#simulator" id="inquiryStartSimulator">시뮬레이션 먼저 하기</a>
+                <a class="text-link" href="#inquiryForm" id="skipSimulatorLink">바로 문의 작성하기</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-intro">
+            <strong>모르는 항목은 “미정”으로 남겨도 괜찮습니다.</strong>
+            <span>정확한 견적보다 먼저, 현재 상황을 이해하는 데 필요한 최소 정보만 적어주세요.</span>
+          </div>
+          
           <div class="hidden-field" aria-hidden="true">
             <label for="companyWebsite">회사 홈페이지</label>
             <input id="companyWebsite" name="companyWebsite" tabindex="-1" autocomplete="off" />
           </div>
+
+          <div class="inquiry-summary" id="inquirySimulationSummary">
+            <h3>선택한 제작 조건</h3>
+            <div class="inquiry-summary-grid">
+              <div class="inquiry-summary-item"><strong>제작 목적</strong><span id="inqSumProject">-</span></div>
+              <div class="inquiry-summary-item"><strong>희망 용량 / 수량</strong><span id="inqSumScale">-</span></div>
+              <div class="inquiry-summary-item"><strong>필요 범위 / 단계</strong><span id="inqSumScope">-</span></div>
+              <div class="inquiry-summary-item"><strong>예상 비용 감각</strong><span id="inqSumBudget">-</span></div>
+            </div>
+            <p class="inquiry-summary-note">시뮬레이터에서 선택한 조건이 자동 입력되었습니다. 연락처와 문의 내용을 확인한 뒤 전송해주세요.</p>
+          </div>
+
           <div class="field-grid">
             <div class="field">
               <label for="brandName">브랜드명 / 회사명</label>
-              <input id="brandName" name="brandName" placeholder="예: 일비" />
+              <input id="brandName" name="brandName" placeholder="예: 일비, 브랜드명이 아직 없으면 비워두셔도 됩니다" />
+              <p class="field-help">개인 프로젝트라면 비워두셔도 됩니다.</p>
             </div>
             <div class="field">
               <label for="contactName">담당자명 *</label>
               <input id="contactName" name="contactName" required placeholder="성함" />
             </div>
             <div class="field">
-              <label for="phone">연락처</label>
-              <input id="phone" name="phone" inputmode="tel" autocomplete="tel" maxlength="13" placeholder="010-0000-0000" />
+              <label for="phone">연락처 *</label>
+              <input id="phone" name="phone" inputmode="tel" autocomplete="tel" maxlength="13" required placeholder="010-0000-0000" />
+              <p class="field-help">회신을 위해 필요한 항목입니다. 숫자만 입력해도 010-0000-0000 형식으로 정리됩니다.</p>
             </div>
             <div class="field">
               <label for="email">이메일 *</label>
@@ -1022,11 +4043,13 @@
                 <option>샘플 제작</option>
                 <option>기타</option>
               </select>
+              <p class="field-help">가장 가까운 목적을 골라주세요. 잘 모르겠다면 기타를 선택해도 됩니다.</p>
+              <p id="projectTypeNotice" class="selected-notice" hidden></p>
             </div>
             <div class="field">
               <label for="volumeMl">희망 용량</label>
               <select id="volumeMl" name="volumeMl">
-                <option value="">미정</option>
+                <option value="">미정 / 상담 후 결정</option>
                 <option>3ml</option>
                 <option>5ml</option>
                 <option>15ml</option>
@@ -1038,27 +4061,32 @@
             <div class="field">
               <label for="quantity">예상 수량</label>
               <input id="quantity" name="quantity" placeholder="예: 300개, 1,000개, 미정" />
+              <p class="field-help">정확하지 않아도 괜찮습니다. 테스트용인지 판매용인지 알 수 있을 정도면 충분합니다.</p>
             </div>
             <div class="field">
               <label for="schedule">희망 일정</label>
               <input id="schedule" name="schedule" placeholder="예: 7월 말, 미정" />
+              <p class="field-help">출시일이 없다면 희망 시기나 “급하지 않음” 정도로 적어주세요.</p>
             </div>
             <div class="field">
               <label for="budget">예산 범위</label>
               <input id="budget" name="budget" placeholder="예: 100만원대, 미정" />
+              <p class="field-help">예산이 없으면 미정으로 남겨도 됩니다. 범위가 있으면 가능한 구성을 잡기 쉽습니다.</p>
             </div>
             <div class="field">
               <label for="reference">참고 향 / 브랜드</label>
-              <input id="reference" name="reference" placeholder="있다면 적어주세요" />
+              <input id="reference" name="reference" placeholder="예: 좋아하는 향, 브랜드, 분위기" />
+              <p class="field-help">정확한 향수명이 아니어도 됩니다. 무드나 키워드도 도움이 됩니다.</p>
             </div>
             <div class="field full">
               <label for="message">문의 내용 *</label>
-              <textarea id="message" name="message" required placeholder="만들고 싶은 향수의 목적, 분위기, 판매/증정 여부, 필요한 작업 범위를 자유롭게 적어주세요."></textarea>
+              <textarea id="message" name="message" required placeholder="예: 브랜드 출시를 준비 중입니다. 50ml 판매용 향수를 소량으로 먼저 테스트하고 싶습니다. 아직 수량과 예산은 미정입니다."></textarea>
+              <p class="field-help">만들고 싶은 이유, 사용 목적, 판매/증정 여부, 고민되는 부분을 편하게 적어주세요.</p>
             </div>
           </div>
 
           <div class="privacy">
-            입력하신 정보는 제작 상담 및 회신 목적으로만 사용됩니다. 정식 개인정보처리방침 페이지를 만들기 전까지는 문의폼 하단 안내 문구로 최소한의 수집 목적과 보관 기준을 명시해두는 것을 권장합니다.
+            입력하신 정보는 제작 상담 검토와 회신 목적으로만 사용됩니다. 문의 내용 확인 후 필요한 경우에만 추가 정보를 요청드립니다.
             <label class="check-row" for="consent">
               <input id="consent" name="consent" type="checkbox" value="동의" required />
               <span>개인정보 수집 및 이용에 동의합니다. *</span>
@@ -1080,7 +4108,7 @@
         <article id="inquiryResult" class="result-card" tabindex="-1" hidden>
           <span id="resultBadge" class="result-badge">Received</span>
           <h3 id="resultTitle">문의가 접수되었습니다.</h3>
-          <p id="resultMessage">입력하신 내용을 검토한 뒤 회신드리겠습니다.</p>
+          <p id="resultMessage">보내주신 내용을 먼저 확인한 뒤, 제작 가능 범위와 필요한 정보를 정리해 연락드리겠습니다.</p>
           <div id="resultNext" class="result-next"></div>
           <div class="result-actions">
             <a id="resultPrimary" class="btn" href="#">사이트 처음으로</a>
@@ -1120,64 +4148,39 @@
     const resultPrimary = document.getElementById("resultPrimary");
     const resultSecondary = document.getElementById("resultSecondary");
 
-    let submitTimer = null;
     let submitted = false;
     let resultHandled = false;
+    let submitTimer = null;
     let activeToken = "";
 
+    function setStatus(message, type = "") {
+      if (!statusEl) return;
+      statusEl.textContent = message || "";
+      statusEl.classList.toggle("ok", type === "ok");
+      statusEl.classList.toggle("err", type === "err");
+    }
+
     function getCleanPageUrl() {
-      return window.location.href.split("#")[0].split("?")[0];
+      return `${window.location.origin}${window.location.pathname}`;
     }
 
     function makeToken() {
       if (window.crypto && window.crypto.getRandomValues) {
         const array = new Uint32Array(4);
         window.crypto.getRandomValues(array);
-        return Array.from(array).map((value) => value.toString(36)).join("");
-      }
-      return String(Date.now()) + String(Math.random()).slice(2);
-    }
-
-    function setStatus(message, type = "") {
-      statusEl.textContent = message;
-      statusEl.className = `status ${type}`.trim();
-    }
-
-    function formatPhoneNumber(value) {
-      const digits = String(value || "").replace(/\D/g, "").slice(0, 11);
-
-      if (!digits) return "";
-
-      // 서울 지역번호처럼 02로 시작하는 번호도 기본적으로 자연스럽게 처리합니다.
-      if (digits.startsWith("02")) {
-        if (digits.length <= 2) return digits;
-        if (digits.length <= 6) return `${digits.slice(0, 2)}-${digits.slice(2)}`;
-        if (digits.length <= 10) return `${digits.slice(0, 2)}-${digits.slice(2, digits.length - 4)}-${digits.slice(-4)}`;
-        return `${digits.slice(0, 2)}-${digits.slice(2, 6)}-${digits.slice(6, 10)}`;
+        return Array.from(array).map((value) => value.toString(16)).join("-");
       }
 
-      if (digits.length <= 3) return digits;
-      if (digits.length <= 7) return `${digits.slice(0, 3)}-${digits.slice(3)}`;
-      return `${digits.slice(0, 3)}-${digits.slice(3, 7)}-${digits.slice(7, 11)}`;
-    }
-
-    if (phoneInput) {
-      phoneInput.addEventListener("input", () => {
-        phoneInput.value = formatPhoneNumber(phoneInput.value);
-      });
-
-      phoneInput.addEventListener("blur", () => {
-        phoneInput.value = formatPhoneNumber(phoneInput.value);
-      });
+      return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
     }
 
     function setHiddenMetaValues() {
       activeToken = makeToken();
-      pageUrl.value = window.location.href;
-      returnUrl.value = getCleanPageUrl();
-      userAgent.value = window.navigator.userAgent;
-      submittedAtClient.value = new Date().toISOString();
-      clientToken.value = activeToken;
+      if (pageUrl) pageUrl.value = window.location.href;
+      if (returnUrl) returnUrl.value = getCleanPageUrl();
+      if (userAgent) userAgent.value = window.navigator.userAgent;
+      if (submittedAtClient) submittedAtClient.value = new Date().toISOString();
+      if (clientToken) clientToken.value = activeToken;
     }
 
     function resetResultUrl(anchor = "inquiry") {
@@ -1192,8 +4195,48 @@
       }
     }
 
+    function formatPhoneNumber(value) {
+      const digits = String(value || "").replace(/\D/g, "").slice(0, 11);
+
+      if (!digits) return "";
+
+      if (digits.startsWith("02")) {
+        if (digits.length <= 2) return digits;
+        if (digits.length <= 5) return `${digits.slice(0, 2)}-${digits.slice(2)}`;
+        if (digits.length <= 9) return `${digits.slice(0, 2)}-${digits.slice(2, 5)}-${digits.slice(5)}`;
+        return `${digits.slice(0, 2)}-${digits.slice(2, 6)}-${digits.slice(6, 10)}`;
+      }
+
+      if (digits.length <= 3) return digits;
+      if (digits.length <= 7) return `${digits.slice(0, 3)}-${digits.slice(3)}`;
+      return `${digits.slice(0, 3)}-${digits.slice(3, 7)}-${digits.slice(7)}`;
+    }
+
+
+    function validatePhoneInput() {
+      if (!phoneInput) return true;
+
+      const digits = String(phoneInput.value || "").replace(/\D/g, "");
+      const isValid = digits.length >= 9 && digits.length <= 11;
+
+      if (!digits) {
+        phoneInput.setCustomValidity("연락처를 입력해주세요.");
+        return false;
+      }
+
+      if (!isValid) {
+        phoneInput.setCustomValidity("회신 가능한 연락처를 확인해주세요.");
+        return false;
+      }
+
+      phoneInput.setCustomValidity("");
+      return true;
+    }
+
+
     function renderInquiryResult(status, reason = "") {
       if (resultHandled && status === "success") return;
+
       resultHandled = true;
       clearSubmitTimer();
 
@@ -1206,15 +4249,16 @@
       if (isSuccess) {
         resultBadge.textContent = "Received";
         resultTitle.textContent = "문의가 접수되었습니다.";
-        resultMessage.textContent = "일비 퍼퓨머리 하우스에 제작 문의가 정상적으로 전달되었습니다. 입력하신 내용을 검토한 뒤 이메일 또는 연락처로 회신드리겠습니다.";
+        resultMessage.textContent = "보내주신 내용을 먼저 확인한 뒤, 제작 가능 범위와 필요한 정보를 정리해 이메일 또는 연락처로 회신드리겠습니다. 아직 수량이나 예산이 정확하지 않아도 괜찮습니다.";
         resultNext.innerHTML = `
-          <strong>다음 단계</strong>
+          <strong>다음 안내</strong>
           <ul>
-            <li>제작 목적, 수량, 용량, 일정, 예산 범위를 먼저 확인합니다.</li>
-            <li>추가 확인이 필요한 경우 입력하신 연락처로 질문을 드립니다.</li>
-            <li>가능 범위가 맞으면 샘플, 견적, 생산 흐름 순서로 안내드립니다.</li>
+            <li>문의 내용을 기준으로 제작 목적과 현재 단계를 먼저 확인합니다.</li>
+            <li>정보가 부족해도 괜찮습니다. 필요한 경우 참고 향, 수량, 용량, 예산 범위를 추가로 질문드립니다.</li>
+            <li>제작 가능 범위가 맞으면 샘플 제작, 견적 검토, 생산 흐름 순서로 안내드립니다.</li>
           </ul>
         `;
+
         form.hidden = true;
         resultPrimary.textContent = "사이트 처음으로";
         resultPrimary.href = "/";
@@ -1223,6 +4267,14 @@
         resultSecondary.onclick = (event) => {
           event.preventDefault();
           form.reset();
+          const projectTypeNotice = document.getElementById("projectTypeNotice");
+          if (projectTypeNotice) {
+            projectTypeNotice.hidden = true;
+            projectTypeNotice.textContent = "";
+          }
+          const inquirySimulationSummary = document.getElementById("inquirySimulationSummary");
+          if (inquirySimulationSummary) inquirySimulationSummary.classList.remove("is-visible");
+          updateInquirySimulatorPrompt(false);
           form.hidden = false;
           resultCard.hidden = true;
           submitted = false;
@@ -1236,7 +4288,7 @@
         };
       } else {
         const messages = {
-          required: "필수 항목이 누락되었습니다. 담당자명, 이메일, 제작 목적, 문의 내용, 개인정보 동의 항목을 확인해주세요.",
+          required: "필수 항목이 누락되었습니다. 담당자명, 연락처, 이메일, 제작 목적, 문의 내용, 개인정보 동의 항목을 확인해주세요. 수량·용량·예산은 미정이어도 괜찮습니다.",
           email: "이메일 형식을 확인해주세요. 회신 가능한 이메일 주소가 필요합니다.",
           sheet: "문의 저장 위치를 찾지 못했습니다. 잠시 후 다시 시도하거나 다른 연락 수단으로 문의해주세요.",
           timeout: "전송 결과 확인이 지연되고 있습니다. 문의가 중복 접수될 수 있으니, 먼저 문의DB 저장 여부를 확인해주세요.",
@@ -1249,11 +4301,12 @@
         resultNext.innerHTML = `
           <strong>다시 확인할 내용</strong>
           <ul>
-            <li>필수 항목이 모두 입력되었는지 확인해주세요.</li>
-            <li>개인정보 수집 및 이용 동의 체크 여부를 확인해주세요.</li>
-            <li>오류가 반복되면 이메일 또는 SNS 메시지로 직접 문의해주세요.</li>
+            <li>담당자명, 연락처, 이메일, 제작 목적, 문의 내용은 필수 항목입니다.</li>
+            <li>수량, 용량, 예산, 일정은 아직 정해지지 않았다면 비워두거나 미정으로 남겨도 됩니다.</li>
+            <li>오류가 반복되면 잠시 후 다시 시도하거나 다른 연락 수단으로 문의해주세요.</li>
           </ul>
         `;
+
         form.hidden = false;
         resultPrimary.textContent = "문의폼 다시 확인";
         resultPrimary.href = "#inquiryForm";
@@ -1273,6 +4326,859 @@
       });
     }
 
+    function syncAccordionLabels(accordion) {
+      accordion.querySelectorAll(".type-accordion-item").forEach((item) => {
+        const button = item.querySelector(".type-toggle");
+        const text = item.querySelector(".type-action-text");
+        const arrow = item.querySelector(".type-action-arrow");
+        const isOpen = item.classList.contains("is-open");
+
+        if (button) button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (text) text.textContent = isOpen ? "접기" : "자세히 보기";
+        if (arrow) arrow.textContent = isOpen ? "↑" : "↓";
+      });
+    }
+
+    function initSingleOpenAccordion() {
+      document.querySelectorAll("[data-single-accordion]").forEach((accordion) => {
+        const items = Array.from(accordion.querySelectorAll(".type-accordion-item"));
+
+        items.forEach((item) => {
+          const button = item.querySelector(".type-toggle");
+          if (!button) return;
+
+          button.addEventListener("click", () => {
+            const willOpen = !item.classList.contains("is-open");
+
+            items.forEach((other) => {
+              other.classList.remove("is-open");
+            });
+
+            if (willOpen) {
+              item.classList.add("is-open");
+            }
+
+            syncAccordionLabels(accordion);
+          });
+        });
+
+        syncAccordionLabels(accordion);
+      });
+    }
+
+    function initSingleOpenDetails(selector) {
+      const detailItems = Array.from(document.querySelectorAll(selector));
+
+      detailItems.forEach((item) => {
+        item.addEventListener("toggle", () => {
+          if (!item.open) return;
+
+          detailItems.forEach((other) => {
+            if (other !== item) other.open = false;
+          });
+        });
+      });
+    }
+
+    function setProjectTypeFromGuide(selectedType) {
+      const select = document.getElementById("projectType");
+      const notice = document.getElementById("projectTypeNotice");
+
+      if (!select || !selectedType) return false;
+
+      const option = Array.from(select.options).find((item) => item.value === selectedType || item.textContent.trim() === selectedType);
+
+      if (!option) {
+        select.value = "기타";
+      } else {
+        select.value = option.value || option.textContent.trim();
+      }
+
+      select.dispatchEvent(new Event("change", { bubbles: true }));
+
+      const field = select.closest(".field");
+      if (field) {
+        field.classList.remove("is-highlighted");
+        void field.offsetWidth;
+        field.classList.add("is-highlighted");
+      }
+
+      if (notice) {
+        notice.hidden = false;
+        notice.textContent = `제작 목적이 '${select.value}'으로 미리 선택되었습니다. 필요하면 다른 항목으로 변경할 수 있습니다.`;
+      }
+
+      return true;
+    }
+
+    function initProjectTypeLinks() {
+      document.querySelectorAll("[data-project-type]").forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          const selectedType = link.getAttribute("data-project-type");
+          setProjectTypeFromGuide(selectedType);
+
+          resetResultUrl("inquiry");
+
+          window.setTimeout(() => {
+            form.scrollIntoView({ behavior: "smooth", block: "start" });
+
+            const select = document.getElementById("projectType");
+            if (select) {
+              window.setTimeout(() => {
+                select.focus({ preventScroll: true });
+              }, 420);
+            }
+          }, 40);
+        });
+      });
+    }
+
+
+    let lastSimulatorResult = null;
+    let simulatorStarted = false;
+
+    const simulatorSteps = [
+      { step: 1, name: "제작 목적 선택", input: "simProjectType" },
+      { step: 2, name: "희망 용량 선택", input: "simVolume" },
+      { step: 3, name: "예상 수량 선택", input: "simQuantity" },
+      { step: 4, name: "필요 범위 선택", input: "simScope" },
+      { step: 5, name: "현재 단계 선택", input: "simStage" }
+    ];
+
+    function getCheckedValue(name) {
+      const checked = document.querySelector(`input[name="${name}"]:checked`);
+      return checked ? checked.value : "";
+    }
+
+    function getSimulatorInput() {
+      return {
+        projectType: getCheckedValue("simProjectType"),
+        volume: getCheckedValue("simVolume"),
+        quantity: getCheckedValue("simQuantity"),
+        scope: getCheckedValue("simScope"),
+        stage: getCheckedValue("simStage")
+      };
+    }
+
+    function getCurrentSimulatorStep() {
+      const firstIncomplete = simulatorSteps.find((item) => !getCheckedValue(item.input));
+      return firstIncomplete ? firstIncomplete.step : simulatorSteps.length;
+    }
+
+    function updateSimulatorProgress(stepNumber) {
+      const progress = document.getElementById("simulatorProgress");
+      const progressText = document.getElementById("simProgressText");
+      const progressLabel = document.getElementById("simProgressLabel");
+      const progressBar = document.getElementById("simProgressBar");
+
+      const safeStep = Math.max(1, Math.min(stepNumber, simulatorSteps.length));
+      const stepInfo = simulatorSteps[safeStep - 1];
+
+      if (progress) progress.hidden = !simulatorStarted;
+      if (progressText) progressText.textContent = `${safeStep} / ${simulatorSteps.length}`;
+      if (progressLabel) progressLabel.textContent = stepInfo ? stepInfo.name : "선택 완료";
+      if (progressBar) progressBar.style.width = `${(safeStep / simulatorSteps.length) * 100}%`;
+    }
+
+
+    function getStepSelectedValue(stepElement) {
+      const checked = stepElement.querySelector('input[type="radio"]:checked');
+      return checked ? checked.value : "";
+    }
+
+    function updateStepSelectedSummary(stepElement) {
+      if (!stepElement) return;
+
+      const value = getStepSelectedValue(stepElement);
+      let summary = stepElement.querySelector(".sim-selected-value");
+
+      if (!summary) {
+        summary = document.createElement("div");
+        summary.className = "sim-selected-value";
+        const copy = stepElement.querySelector(".sim-step-copy");
+        if (copy) {
+          copy.insertAdjacentElement("afterend", summary);
+        } else {
+          stepElement.appendChild(summary);
+        }
+      }
+
+      summary.textContent = value ? `선택한 내용: ${value}` : "";
+    }
+
+    function updateCompletedStepSummaries() {
+      document.querySelectorAll("#simulator .sim-step").forEach((step) => {
+        updateStepSelectedSummary(step);
+      });
+    }
+
+
+    function showSimulatorStep(stepNumber) {
+      const actions = document.getElementById("simulatorActions");
+      const steps = Array.from(document.querySelectorAll("#simulator .sim-step"));
+
+      steps.forEach((step) => {
+        const number = Number(step.getAttribute("data-step"));
+        const isActive = number === stepNumber;
+        const isComplete = number < stepNumber;
+
+        step.hidden = number > stepNumber;
+        step.classList.toggle("is-active", isActive);
+        step.classList.toggle("is-complete", isComplete);
+      });
+
+      if (actions) actions.hidden = stepNumber <= simulatorSteps.length;
+
+      updateCompletedStepSummaries();
+      updateSimulatorProgress(Math.min(stepNumber, simulatorSteps.length));
+    }
+
+    function startSimulatorJourney() {
+      simulatorStarted = true;
+      lastSimulatorResult = null;
+
+      const startPanel = document.getElementById("simulatorStartPanel");
+      const formBox = document.getElementById("simulatorForm");
+      const resultBox = document.getElementById("simulatorResult");
+      const inquiryButton = document.getElementById("simulatorToInquiry");
+      const filled = document.getElementById("simulatorFilled");
+
+      if (startPanel) startPanel.classList.add("is-hidden");
+      if (formBox) formBox.classList.remove("is-locked");
+      if (resultBox) resultBox.classList.remove("is-visible");
+      if (inquiryButton) inquiryButton.disabled = true;
+      if (filled) filled.classList.remove("is-visible");
+
+      showSimulatorStep(1);
+
+      window.setTimeout(() => {
+        const firstStep = document.querySelector('#simulator .sim-step[data-step="1"]');
+        if (firstStep) firstStep.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 80);
+    }
+
+    function resetSimulatorJourney() {
+      document.querySelectorAll('#simulator input[type="radio"]').forEach((input) => {
+        input.checked = false;
+      });
+
+      document.querySelectorAll("#simulator .sim-selected-value").forEach((summary) => {
+        summary.textContent = "";
+      });
+
+      simulatorStarted = true;
+      lastSimulatorResult = null;
+
+      const resultBox = document.getElementById("simulatorResult");
+      const inquiryButton = document.getElementById("simulatorToInquiry");
+      const filled = document.getElementById("simulatorFilled");
+
+      if (resultBox) resultBox.classList.remove("is-visible");
+      if (inquiryButton) inquiryButton.disabled = true;
+      if (filled) filled.classList.remove("is-visible");
+
+      showSimulatorStep(1);
+
+      window.setTimeout(() => {
+        const firstStep = document.querySelector('#simulator .sim-step[data-step="1"]');
+        if (firstStep) firstStep.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 80);
+    }
+
+    function handleSimulatorChoice(input) {
+      if (!simulatorStarted) return;
+
+      const stepElement = input.closest(".sim-step");
+      updateStepSelectedSummary(stepElement);
+
+      const step = Number(stepElement?.getAttribute("data-step") || 1);
+      const nextStep = step + 1;
+
+      lastSimulatorResult = null;
+      const resultBox = document.getElementById("simulatorResult");
+      const inquiryButton = document.getElementById("simulatorToInquiry");
+      const filled = document.getElementById("simulatorFilled");
+
+      if (resultBox) resultBox.classList.remove("is-visible");
+      if (inquiryButton) inquiryButton.disabled = true;
+      if (filled) filled.classList.remove("is-visible");
+
+      if (nextStep <= simulatorSteps.length) {
+        showSimulatorStep(nextStep);
+        window.setTimeout(() => {
+          const next = document.querySelector(`#simulator .sim-step[data-step="${nextStep}"]`);
+          if (next) next.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 80);
+      } else {
+        showSimulatorStep(simulatorSteps.length + 1);
+        const result = estimateSimulator(getSimulatorInput());
+        renderSimulatorResult(result);
+      }
+    }
+
+    function getChecklistByProjectType(projectType) {
+      const common = ["참고 향 또는 원하는 분위기", "희망 납기", "판매용인지 증정용인지"];
+      const map = {
+        "브랜드 향수": ["브랜드 컨셉", "희망 판매가", "판매 채널", "타깃 고객"],
+        "굿즈 향수": ["행사 또는 콘텐츠 목적", "배포 대상", "로고/라벨 자료", "필요 일정"],
+        "소량 테스트": ["테스트 목적", "반응을 볼 대상", "대략적인 테스트 수량", "후속 생산 여부"],
+        "향 개발": ["표현하고 싶은 분위기", "피하고 싶은 향", "타깃 이미지", "참고 키워드"],
+        "PB 제품": ["판매처", "타깃 고객", "희망 소비자가", "반복 판매 가능성"],
+        "샘플 제작": ["샘플 목적", "필요 개수", "확인하고 싶은 향 방향", "전달 일정"]
+      };
+
+      return [...(map[projectType] || []), ...common].slice(0, 5);
+    }
+
+    function getCostFactors(input) {
+      const factors = [];
+
+      if (input.projectType === "향 개발" || input.scope === "향 개발만") {
+        factors.push("향 개발: 새로 개발할수록 샘플링 시간과 조정 범위가 늘어납니다.");
+      } else {
+        factors.push("향 적용 범위: 기존 방향 활용인지 신규 개발인지에 따라 달라집니다.");
+      }
+
+      factors.push("수량: 소량일수록 기본 작업비 비중이 커지고, 수량이 늘수록 단가가 안정됩니다.");
+
+      if (input.volume === "미정") {
+        factors.push("용량: 용량이 정해지면 용기와 충진 기준을 더 정확히 볼 수 있습니다.");
+      } else {
+        factors.push(`용량: ${input.volume} 기준 용기, 충진 방식, 부자재 선택에 따라 비용이 달라집니다.`);
+      }
+
+      if (input.scope === "라벨/단상자까지" || input.scope === "완제품 형태") {
+        factors.push("패키지: 라벨, 단상자, 마감 방식이 포함될수록 부자재와 작업 범위가 커집니다.");
+      } else {
+        factors.push("작업 범위: 충진만인지 완제품 마감까지인지에 따라 비용 차이가 생깁니다.");
+      }
+
+      if (input.stage === "출시 일정 있음") {
+        factors.push("납기: 일정이 촉박하면 자재 수급과 작업 배치가 비용에 영향을 줄 수 있습니다.");
+      }
+
+      return factors.slice(0, 5);
+    }
+
+    function estimateReadiness(input) {
+      const projectClarity = {
+        "브랜드 향수": 15,
+        "굿즈 향수": 14,
+        "소량 테스트": 12,
+        "향 개발": 10,
+        "PB 제품": 16,
+        "샘플 제작": 11
+      };
+
+      const volumeClarity = {
+        "3ml": 10,
+        "5ml": 11,
+        "15ml": 13,
+        "30ml": 14,
+        "50ml": 15,
+        "미정": 5
+      };
+
+      const quantityClarity = {
+        "100개 이하": 8,
+        "100~300개": 11,
+        "300~500개": 14,
+        "500~1,000개": 15,
+        "1,000개 이상": 13,
+        "미정": 5
+      };
+
+      const scopeClarity = {
+        "향 개발만": 10,
+        "샘플 제작": 10,
+        "충진까지": 12,
+        "라벨/단상자까지": 15,
+        "완제품 형태": 16,
+        "잘 모르겠음": 5
+      };
+
+      const stageClarity = {
+        "아이디어 단계": 6,
+        "방향 검토 단계": 11,
+        "제작 준비 단계": 15,
+        "출시 일정 있음": 14
+      };
+
+      let score =
+        25 +
+        (projectClarity[input.projectType] || 10) +
+        (volumeClarity[input.volume] || 5) +
+        (quantityClarity[input.quantity] || 5) +
+        (scopeClarity[input.scope] || 5) +
+        (stageClarity[input.stage] || 6);
+
+      const uncertainCount = [input.volume, input.quantity, input.scope].filter((value) => value === "미정" || value === "잘 모르겠음").length;
+      score -= uncertainCount * 4;
+
+      if (input.stage === "아이디어 단계" && input.scope === "잘 모르겠음") score -= 5;
+      if (input.stage === "제작 준비 단계" && input.quantity !== "미정" && input.volume !== "미정") score += 3;
+      if (input.projectType === "향 개발" && input.scope === "향 개발만") score += 4;
+      if (input.projectType === "샘플 제작" && input.quantity === "100개 이하") score += 3;
+      if ((input.projectType === "브랜드 향수" || input.projectType === "PB 제품") && input.scope === "완제품 형태") score += 3;
+      if (input.quantity === "1,000개 이상" && input.stage === "아이디어 단계") score -= 4;
+
+      score = Math.round(Math.max(48, Math.min(score, 94)));
+
+      let text = "현재 조건이면 첫 상담을 시작하기에 충분합니다.";
+      let level = "기본 준비";
+
+      if (score >= 88) {
+        level = "제작 검토 준비";
+        text = "제작 목적과 조건이 비교적 구체적입니다. 상담에서는 세부 사양, 납기, 부자재 확인에 집중하면 좋습니다.";
+      } else if (score >= 76) {
+        level = "상담 진행 적합";
+        text = "기본 조건이 잘 잡혀 있습니다. 참고 향, 패키지 수준, 일정만 보완하면 상담이 더 빨라집니다.";
+      } else if (score >= 64) {
+        level = "방향 검토 필요";
+        text = "상담은 시작할 수 있지만 몇 가지 조건이 아직 열려 있습니다. 목적과 우선순위를 먼저 정리하면 좋습니다.";
+      } else {
+        level = "아이디어 정리 단계";
+        text = "아직 미정인 부분이 많아도 괜찮습니다. 먼저 목적과 현재 상황을 정리하는 상담부터 시작할 수 있습니다.";
+      }
+
+      return { score, title: level, text };
+    }
+
+    function estimateSimulator(input) {
+      let score = 0;
+
+      const projectScore = {
+        "향 개발": 1,
+        "샘플 제작": 1,
+        "소량 테스트": 2,
+        "굿즈 향수": 3,
+        "브랜드 향수": 3,
+        "PB 제품": 4
+      };
+
+      const quantityScore = {
+        "100개 이하": 1,
+        "100~300개": 2,
+        "300~500개": 3,
+        "500~1,000개": 4,
+        "1,000개 이상": 5,
+        "미정": 2
+      };
+
+      const scopeScore = {
+        "향 개발만": 1,
+        "샘플 제작": 1,
+        "충진까지": 2,
+        "라벨/단상자까지": 3,
+        "완제품 형태": 4,
+        "잘 모르겠음": 2
+      };
+
+      score += projectScore[input.projectType] || 2;
+      score += quantityScore[input.quantity] || 2;
+      score += scopeScore[input.scope] || 2;
+
+      if (input.stage === "출시 일정 있음") score += 1;
+      if (input.volume === "50ml") score += 1;
+      if (input.volume === "3ml" || input.volume === "5ml") score -= 1;
+
+      let budgetRange = "50만~150만원 범위 검토";
+      if (score >= 10) budgetRange = "300만원 이상 범위 검토";
+      else if (score >= 7) budgetRange = "150만~300만원 범위 검토";
+
+      let startType = "소량 테스트 후 제작 범위 검토";
+      if (input.projectType === "향 개발") startType = "향 방향 정리와 샘플 개발부터 시작";
+      else if (input.projectType === "샘플 제작") startType = "검토용 샘플 제작 가능 범위 확인";
+      else if (input.scope === "완제품 형태") startType = "완제품 사양과 견적 범위 검토";
+      else if (input.stage === "아이디어 단계") startType = "목적과 컨셉 정리부터 시작";
+      else if (input.stage === "출시 일정 있음") startType = "납기와 제작 가능 범위 우선 확인";
+
+      const checkItems = [];
+      checkItems.push("참고 향 또는 원하는 분위기");
+      if (input.quantity === "미정") checkItems.push("대략적인 테스트/판매 수량");
+      else checkItems.push(`수량 ${input.quantity} 기준 가능 범위`);
+      if (input.volume === "미정") checkItems.push("희망 용량");
+      else checkItems.push(`${input.volume} 용량 적합성`);
+      checkItems.push("라벨·포장·납기 조건");
+
+      const readiness = estimateReadiness(input);
+      const costFactors = getCostFactors(input);
+      const checklist = getChecklistByProjectType(input.projectType);
+      const title = `${input.projectType} 제작 조건 미리보기`;
+      const diagnosis = `현재 조건은 '${startType}'에 가까워 보입니다. ${input.quantity} / ${input.volume} / ${input.scope} 조건을 기준으로 비용은 '${budgetRange}'에서 먼저 검토하는 것이 자연스럽습니다.`;
+
+      return {
+        ...input,
+        title,
+        diagnosis,
+        startType,
+        budgetRange,
+        checkText: checkItems.join(", "),
+        costFactors,
+        checklist,
+        readiness,
+        summary: [
+          `[제작 조건 미리보기 결과]`,
+          ``,
+          `제작 목적: ${input.projectType}`,
+          `희망 용량: ${input.volume}`,
+          `예상 수량: ${input.quantity}`,
+          `필요 범위: ${input.scope}`,
+          `현재 단계: ${input.stage}`,
+          ``,
+          `추천 시작 방식:`,
+          `${startType}`,
+          ``,
+          `예상 비용 감각:`,
+          `${budgetRange}`,
+          ``,
+          `상담 준비도:`,
+          `${readiness.score}% - ${readiness.text}`,
+          ``,
+          `비용이 달라지는 주요 이유:`,
+          `${costFactors.map((item) => `- ${item}`).join("\n")}`,
+          ``,
+          `상담 전 준비하면 좋은 것:`,
+          `${checklist.map((item) => `- ${item}`).join("\n")}`,
+          ``,
+          `추가로 상담받고 싶은 내용:`
+        ].join("\n")
+      };
+    }
+
+    function renderList(targetId, items, marker = "✓") {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      target.innerHTML = "";
+
+      items.forEach((item) => {
+        const li = document.createElement("li");
+        const icon = document.createElement("b");
+        const span = document.createElement("span");
+        icon.textContent = marker;
+        span.textContent = item;
+        li.appendChild(icon);
+        li.appendChild(span);
+        target.appendChild(li);
+      });
+    }
+
+
+    function resetResultDetails() {
+      document.querySelectorAll(".sim-result-detail").forEach((detail) => {
+        detail.open = false;
+        const label = detail.querySelector("summary b");
+        if (label) label.textContent = "열기";
+      });
+    }
+
+    function initResultDetails() {
+      document.querySelectorAll(".sim-result-detail").forEach((detail) => {
+        detail.addEventListener("toggle", () => {
+          const label = detail.querySelector("summary b");
+          if (label) label.textContent = detail.open ? "접기" : "열기";
+        });
+      });
+    }
+
+
+    function renderSimulatorResult(result) {
+      lastSimulatorResult = result;
+
+      const resultBox = document.getElementById("simulatorResult");
+      const title = document.getElementById("simulatorTitle");
+      const badge = document.getElementById("simulatorBadge");
+      const diagnosis = document.getElementById("simulatorDiagnosis");
+      const readinessBox = document.getElementById("simReadiness");
+      const readinessScore = document.getElementById("simReadinessScore");
+      const readinessTitle = document.getElementById("simReadinessTitle");
+      const readinessText = document.getElementById("simReadinessText");
+      const sumProject = document.getElementById("simSumProject");
+      const sumScale = document.getElementById("simSumScale");
+      const sumScope = document.getElementById("simSumScope");
+      const sumStage = document.getElementById("simSumStage");
+      const start = document.getElementById("simulatorStart");
+      const budget = document.getElementById("simulatorBudget");
+      const check = document.getElementById("simulatorCheck");
+      const button = document.getElementById("simulatorToInquiry");
+      const filled = document.getElementById("simulatorFilled");
+
+      if (!resultBox) return;
+
+      if (title) title.textContent = result.title;
+      if (badge) badge.textContent = result.stage;
+      if (diagnosis) diagnosis.textContent = result.diagnosis;
+      if (readinessBox) readinessBox.style.setProperty("--readiness", `${result.readiness.score}%`);
+      if (readinessScore) readinessScore.textContent = `${result.readiness.score}%`;
+      if (readinessTitle) readinessTitle.textContent = result.readiness.title;
+      if (readinessText) readinessText.textContent = result.readiness.text;
+      if (sumProject) sumProject.textContent = result.projectType;
+      if (sumScale) sumScale.textContent = `${result.volume} / ${result.quantity}`;
+      if (sumScope) sumScope.textContent = result.scope;
+      if (sumStage) sumStage.textContent = result.stage;
+      if (start) start.textContent = result.startType;
+      if (budget) budget.textContent = result.budgetRange;
+      if (check) check.textContent = result.checkText;
+      if (button) button.disabled = false;
+      if (filled) filled.classList.remove("is-visible");
+
+      renderList("simCostFactors", result.costFactors, "₩");
+      renderList("simChecklist", result.checklist, "✓");
+      resetResultDetails();
+
+      resultBox.classList.add("is-visible");
+      resultBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    function setSelectValue(selectId, value) {
+      const select = document.getElementById(selectId);
+      if (!select || !value) return false;
+
+      const option = Array.from(select.options).find((item) => item.value === value || item.textContent.trim() === value);
+
+      if (option) {
+        select.value = option.value || option.textContent.trim();
+        select.dispatchEvent(new Event("change", { bubbles: true }));
+        return true;
+      }
+
+      return false;
+    }
+
+    function updateInquirySimulationSummary(result) {
+      const summary = document.getElementById("inquirySimulationSummary");
+      const project = document.getElementById("inqSumProject");
+      const scale = document.getElementById("inqSumScale");
+      const scope = document.getElementById("inqSumScope");
+      const budget = document.getElementById("inqSumBudget");
+
+      if (!summary || !result) return;
+
+      if (project) project.textContent = result.projectType;
+      if (scale) scale.textContent = `${result.volume} / ${result.quantity}`;
+      if (scope) scope.textContent = `${result.scope} / ${result.stage}`;
+      if (budget) budget.textContent = result.budgetRange;
+
+      summary.classList.add("is-visible");
+    }
+
+    function fillInquiryFromSimulator(result) {
+      if (!result) return;
+
+      setProjectTypeFromGuide(result.projectType);
+      setSelectValue("volumeMl", result.volume);
+
+      const quantity = document.getElementById("quantity");
+      const budget = document.getElementById("budget");
+      const message = document.getElementById("message");
+      const filled = document.getElementById("simulatorFilled");
+
+      if (quantity) quantity.value = result.quantity;
+      if (budget) budget.value = result.budgetRange;
+
+      if (message) {
+        const current = message.value.trim();
+        const shouldReplace = !current || current.startsWith("[제작 조건 미리보기 결과]");
+        message.value = shouldReplace ? result.summary : `${result.summary}\n\n${current}`;
+      }
+
+      updateInquirySimulationSummary(result);
+      updateInquirySimulatorPrompt(true);
+
+      if (filled) {
+        filled.textContent = "선택한 조건을 문의폼에 반영했습니다. 아래 문의폼에서 연락처와 내용을 확인해주세요.";
+        filled.classList.add("is-visible");
+      }
+
+      resetResultUrl("inquiry");
+
+      window.setTimeout(() => {
+        form.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 80);
+    }
+
+
+    function updateInquirySimulatorPrompt(isCompleted = false) {
+      const prompt = document.getElementById("inquirySimPrompt");
+      if (!prompt) return;
+
+      const title = prompt.querySelector("h3");
+      const desc = prompt.querySelector("p");
+
+      prompt.classList.toggle("is-completed", isCompleted);
+
+      if (isCompleted) {
+        if (title) title.textContent = "시뮬레이션 결과가 반영되었습니다.";
+        if (desc) desc.textContent = "선택한 제작 조건 요약을 확인하고, 연락처와 추가로 상담받고 싶은 내용을 보완해 전송해주세요.";
+      } else {
+        if (title) title.textContent = "작성 전에 조건을 먼저 정리해볼 수 있습니다.";
+        if (desc) desc.textContent = "시뮬레이션을 진행하면 제작 목적, 용량, 수량, 필요한 범위가 문의폼에 자동 입력됩니다. 바로 작성해도 괜찮지만, 처음이라면 먼저 정리해보는 것을 권장합니다.";
+      }
+    }
+
+    function initInquirySimulatorPrompt() {
+      const startLink = document.getElementById("inquiryStartSimulator");
+      const skipLink = document.getElementById("skipSimulatorLink");
+
+      if (startLink) {
+        startLink.addEventListener("click", (event) => {
+          event.preventDefault();
+          resetResultUrl("simulator");
+
+          const simulator = document.getElementById("simulator");
+          if (simulator) simulator.scrollIntoView({ behavior: "smooth", block: "start" });
+
+          window.setTimeout(() => {
+            const startButton = document.getElementById("startSimulatorButton");
+            const formBox = document.getElementById("simulatorForm");
+            if (startButton && formBox && formBox.classList.contains("is-locked")) {
+              startButton.click();
+            }
+          }, 450);
+        });
+      }
+
+      if (skipLink) {
+        skipLink.addEventListener("click", () => {
+          updateInquirySimulatorPrompt(false);
+        });
+      }
+    }
+
+
+    function initSimulator() {
+      const startButton = document.getElementById("startSimulatorButton");
+      const restartButton = document.getElementById("restartSimulatorButton");
+      const resultRestartButton = document.getElementById("resultRestartSimulatorButton");
+      const simulateButton = document.getElementById("simulateButton");
+      const inquiryButton = document.getElementById("simulatorToInquiry");
+
+      if (startButton) {
+        startButton.addEventListener("click", startSimulatorJourney);
+      }
+
+      if (restartButton) {
+        restartButton.addEventListener("click", resetSimulatorJourney);
+      }
+
+      if (resultRestartButton) {
+        resultRestartButton.addEventListener("click", resetSimulatorJourney);
+      }
+
+      if (simulateButton) {
+        simulateButton.addEventListener("click", () => {
+          const result = estimateSimulator(getSimulatorInput());
+          renderSimulatorResult(result);
+        });
+      }
+
+      if (inquiryButton) {
+        inquiryButton.addEventListener("click", () => {
+          if (!lastSimulatorResult) {
+            lastSimulatorResult = estimateSimulator(getSimulatorInput());
+            renderSimulatorResult(lastSimulatorResult);
+          }
+
+          fillInquiryFromSimulator(lastSimulatorResult);
+        });
+      }
+
+      document.querySelectorAll('#simulator input[type="radio"]').forEach((input) => {
+        input.addEventListener("change", () => handleSimulatorChoice(input));
+      });
+    }
+
+
+    function initStickyHeaderAndToc() {
+      const header = document.getElementById("siteHeader");
+      const toggle = document.getElementById("tocToggle");
+      const panel = document.getElementById("tocPanel");
+      const backdrop = document.getElementById("tocBackdrop");
+      const closeButton = document.getElementById("tocClose");
+      const tocLinks = Array.from(document.querySelectorAll(".toc-list a"));
+
+      function setHeaderState() {
+        if (!header) return;
+        header.classList.toggle("is-compact", window.scrollY > 24);
+      }
+
+      function openToc() {
+        if (!panel || !toggle || !backdrop) return;
+        panel.classList.add("is-open");
+        panel.setAttribute("aria-hidden", "false");
+        toggle.setAttribute("aria-expanded", "true");
+        backdrop.hidden = false;
+        backdrop.classList.add("is-open");
+        document.body.classList.add("toc-open");
+      }
+
+      function closeToc() {
+        if (!panel || !toggle || !backdrop) return;
+        panel.classList.remove("is-open");
+        panel.setAttribute("aria-hidden", "true");
+        toggle.setAttribute("aria-expanded", "false");
+        backdrop.classList.remove("is-open");
+        document.body.classList.remove("toc-open");
+
+        window.setTimeout(() => {
+          if (!panel.classList.contains("is-open")) {
+            backdrop.hidden = true;
+          }
+        }, 180);
+      }
+
+      function toggleToc() {
+        if (panel && panel.classList.contains("is-open")) closeToc();
+        else openToc();
+      }
+
+      function setActiveTocLink() {
+        const sections = tocLinks
+          .map((link) => {
+            const id = link.getAttribute("href");
+            if (!id || !id.startsWith("#")) return null;
+            const el = document.querySelector(id);
+            return el ? { link, el } : null;
+          })
+          .filter(Boolean);
+
+        let active = sections[0];
+
+        sections.forEach((item) => {
+          const rect = item.el.getBoundingClientRect();
+          if (rect.top <= 130) active = item;
+        });
+
+        tocLinks.forEach((link) => link.classList.toggle("is-active", active && link === active.link));
+      }
+
+      if (toggle) toggle.addEventListener("click", toggleToc);
+      if (closeButton) closeButton.addEventListener("click", closeToc);
+      if (backdrop) backdrop.addEventListener("click", closeToc);
+
+      tocLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          closeToc();
+        });
+      });
+
+      window.addEventListener("scroll", () => {
+        setHeaderState();
+        setActiveTocLink();
+      }, { passive: true });
+
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeToc();
+      });
+
+      setHeaderState();
+      setActiveTocLink();
+    }
+
+
     window.addEventListener("message", (event) => {
       const data = event.data || {};
       if (!data || data.source !== "illvii-inquiry") return;
@@ -1281,16 +5187,35 @@
       renderInquiryResult(data.ok ? "success" : "error", data.reason || "system");
     });
 
-    submitFrame.addEventListener("load", () => {
-      // Apps Script 응답은 googleusercontent.com iframe 안에서 실행되기 때문에
-      // 브라우저/계정 상태에 따라 postMessage 도착이 지연될 수 있습니다.
-      // iframe 로드 자체가 끝나면 주소창은 perfumery.kr에 그대로 두고 자연스럽게 완료 화면을 보여줍니다.
-      if (!submitted || resultHandled) return;
-      window.setTimeout(() => {
-        if (!resultHandled) renderInquiryResult("success");
-      }, 350);
-    });
+    if (submitFrame) {
+      submitFrame.addEventListener("load", () => {
+        if (!submitted || resultHandled) return;
 
+        window.setTimeout(() => {
+          if (!resultHandled) renderInquiryResult("success");
+        }, 350);
+      });
+    }
+
+    if (phoneInput) {
+      phoneInput.addEventListener("input", () => {
+        phoneInput.value = formatPhoneNumber(phoneInput.value);
+        validatePhoneInput();
+      });
+
+      phoneInput.addEventListener("blur", () => {
+        phoneInput.value = formatPhoneNumber(phoneInput.value);
+        validatePhoneInput();
+      });
+    }
+
+    initSingleOpenAccordion();
+    initSingleOpenDetails("#faq details");
+    initProjectTypeLinks();
+    initSimulator();
+    initInquirySimulatorPrompt();
+    initStickyHeaderAndToc();
+    initResultDetails();
     setHiddenMetaValues();
 
     form.addEventListener("submit", (event) => {
@@ -1299,15 +5224,16 @@
       resultHandled = false;
       submitted = false;
 
+      if (phoneInput) {
+        phoneInput.value = formatPhoneNumber(phoneInput.value);
+        validatePhoneInput();
+      }
+
       if (!form.checkValidity()) {
         event.preventDefault();
         form.reportValidity();
-        setStatus("필수 항목을 확인해주세요.", "err");
+        setStatus("필수 항목을 확인해주세요. 연락처도 반드시 필요합니다.", "err");
         return;
-      }
-
-      if (phoneInput) {
-        phoneInput.value = formatPhoneNumber(phoneInput.value);
       }
 
       setHiddenMetaValues();
@@ -1321,9 +5247,6 @@
       submitTimer = window.setTimeout(() => {
         if (!resultHandled) renderInquiryResult("error", "timeout");
       }, 20000);
-
-      // event.preventDefault()를 하지 않습니다.
-      // 브라우저 기본 form POST를 사용하되, target이 숨김 iframe이므로 주소창은 perfumery.kr에 유지됩니다.
     });
   </script>
 </body>
