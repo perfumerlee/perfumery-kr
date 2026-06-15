@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.27 : mobile hero readability fix -->
+<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.28 : remove mobile hero background logo -->
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
@@ -3617,6 +3617,77 @@
 
       .hero-copy {
         padding-right: 0;
+      }
+    }
+
+
+    /* v0.28 mobile hero background logo removal */
+    @media (max-width: 860px) {
+      .hero::after {
+        display: none !important;
+        content: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+      }
+
+      .hero::before {
+        opacity: .035 !important;
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-grid > div:first-child {
+        position: relative;
+        z-index: 3;
+      }
+
+      .hero h1,
+      .hero p.lead,
+      .hero .eyebrow {
+        position: relative;
+        z-index: 4;
+        text-shadow: none;
+      }
+
+      .hero h1 {
+        color: var(--forest);
+        max-width: 100%;
+      }
+
+      .hero p.lead {
+        color: #4d586c;
+        max-width: 100%;
+      }
+
+      .hero-actions,
+      .hero-note {
+        position: relative;
+        z-index: 4;
+      }
+
+      .hero-panel::after {
+        opacity: .035 !important;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero::before {
+        opacity: .025 !important;
+      }
+
+      .hero h1 {
+        letter-spacing: -0.065em;
+      }
+
+      .hero p.lead {
+        line-height: 1.72;
       }
     }
 
