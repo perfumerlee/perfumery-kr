@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.26 : balanced inquiry form layout -->
+<!-- perfumery.kr / 일비 퍼퓨머리 하우스 v0.27 : mobile hero readability fix -->
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
@@ -3503,6 +3503,120 @@
 
       .form-actions .btn {
         width: 100%;
+      }
+    }
+
+
+    /* v0.27 mobile hero readability fix */
+    .hero-copy,
+    .hero-copy .eyebrow,
+    .hero-copy h1,
+    .hero-copy .lead,
+    .hero-actions,
+    .hero-note {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-visual,
+    .hero::after,
+    .hero::before {
+      pointer-events: none;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        overflow: hidden;
+      }
+
+      .hero-copy {
+        isolation: isolate;
+      }
+
+      .hero h1 {
+        max-width: 92%;
+        position: relative;
+        z-index: 3;
+      }
+
+      .hero .lead {
+        max-width: 91%;
+        position: relative;
+        z-index: 3;
+      }
+
+      .hero-visual,
+      .hero-art,
+      .hero-pattern,
+      .hero-symbol,
+      .hero-mark,
+      .hero-logo-bg,
+      .hero-deco {
+        opacity: .09 !important;
+        transform: translate(30%, -2%) scale(.72) !important;
+        right: -40% !important;
+        left: auto !important;
+        top: 24% !important;
+        z-index: 0 !important;
+      }
+
+      .hero::after {
+        opacity: .055 !important;
+        right: -42% !important;
+        top: 23% !important;
+        width: 82vw !important;
+        height: 82vw !important;
+        z-index: 0 !important;
+      }
+
+      .hero::before {
+        opacity: .045 !important;
+        z-index: 0 !important;
+      }
+
+      .hero-actions {
+        position: relative;
+        z-index: 4;
+      }
+
+      .hero-note {
+        position: relative;
+        z-index: 4;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero h1 {
+        max-width: 100%;
+      }
+
+      .hero .lead {
+        max-width: 100%;
+      }
+
+      .hero-visual,
+      .hero-art,
+      .hero-pattern,
+      .hero-symbol,
+      .hero-mark,
+      .hero-logo-bg,
+      .hero-deco {
+        opacity: .06 !important;
+        transform: translate(38%, 4%) scale(.62) !important;
+        right: -52% !important;
+        top: 30% !important;
+      }
+
+      .hero::after {
+        opacity: .035 !important;
+        right: -54% !important;
+        top: 30% !important;
+        width: 92vw !important;
+        height: 92vw !important;
+      }
+
+      .hero-copy {
+        padding-right: 0;
       }
     }
 
