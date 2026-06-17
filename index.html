@@ -1,10 +1,10 @@
 <!doctype html>
-<!-- ILLVII 향수 주문 페이지 v0.42 -->
+<!-- ILLVII 향수 주문 페이지 v0.43 -->
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <title>ILLVII 향수 주문하기 · v0.42</title>
+  <title>ILLVII 향수 주문하기 · v0.43</title>
   <meta name="description" content="ILLVII 향수 온라인 주문 접수 페이지" />
 
   <link rel="icon" type="image/svg+xml" href="/assets/illvii-logo-yellow.svg" />
@@ -1285,7 +1285,7 @@
 
 
 
-    /* v0.42: 20-30대 감성에 맞춘 세련된 비주얼 고도화 */
+    /* v0.43: 20-30대 감성에 맞춘 세련된 비주얼 고도화 */
     body::before {
       content: "";
       position: fixed;
@@ -1433,6 +1433,16 @@
         linear-gradient(rgba(33, 28, 24, .045) 1px, transparent 1px);
       background-size: auto, 100% 42px;
       mix-blend-mode: soft-light;
+    }
+
+
+    .scent-la-dolce-vita {
+      --scent-a: #f2cf52;
+      --scent-b: #f68aa0;
+      --scent-c: #f3cddd;
+      --scent-d: #7b8a5d;
+      --scent-ink: #2f392c;
+      --scent-surface: linear-gradient(150deg, #fff5d6 0%, #ffe5ef 47%, #edf4e6 100%);
     }
 
     .scent-solvia {
@@ -1602,7 +1612,7 @@
     }
 
 
-    /* v0.42: 전체 톤을 하나의 브랜드 드롭 페이지처럼 재정리한 디자인 고도화 */
+    /* v0.43: 전체 톤을 하나의 브랜드 드롭 페이지처럼 재정리한 디자인 고도화 */
     :root {
       --bg: #f3efe6;
       --paper: #fffdf6;
@@ -1908,6 +1918,16 @@
         repeating-linear-gradient(90deg, rgba(255,255,255,.16) 0 1px, transparent 1px 8px);
       opacity: .55;
       mix-blend-mode: soft-light;
+    }
+
+
+    .scent-la-dolce-vita {
+      --scent-a: #f2cf52;
+      --scent-b: #f68aa0;
+      --scent-c: #f3cddd;
+      --scent-d: #7b8a5d;
+      --scent-ink: #2f392c;
+      --scent-surface: linear-gradient(150deg, #fff5d6 0%, #ffe5ef 47%, #edf4e6 100%);
     }
 
     .scent-solvia {
@@ -2297,7 +2317,7 @@
     }
 
 
-    /* v0.42: 주문 선택 영역 균형 / 주소검색 레이어 개선 */
+    /* v0.43: 주문 선택 영역 균형 / 주소검색 레이어 개선 */
     .brand {
       flex-direction: row;
       align-items: center;
@@ -2465,7 +2485,7 @@
       .option-focus .option-body { min-height: 126px; }
       .postcode-embed { height: 430px; min-height: 430px; }
     }
-    /* v0.42: 쇼핑몰 기본정보 줄바꿈 조정 + 입금 계좌 변경 */
+    /* v0.43: 쇼핑몰 기본정보 줄바꿈 조정 + 입금 계좌 변경 */
     .shop-footer {
       max-width: 1080px;
       margin: 44px auto 0;
@@ -2657,7 +2677,7 @@
     }
 
 
-    /* v0.42: barcode logo + right top menu */
+    /* v0.43: barcode logo + right top menu */
     .header-menu-wrap {
       position: relative;
       display: flex;
@@ -2819,7 +2839,7 @@
     }
 
 
-    /* v0.42: GNB 문구/섹션 간격/모바일 버튼 정렬/확대 방지 개선 */
+    /* v0.43: GNB 문구/섹션 간격/모바일 버튼 정렬/확대 방지 개선 */
     html,
     body {
       width: 100%;
@@ -2978,7 +2998,7 @@
 
 
 
-    /* v0.42: fixed header / mobile logo balance / refined alert modal */
+    /* v0.43: fixed header / mobile logo balance / refined alert modal */
     :root { --header-height: 72px; }
 
     body {
@@ -3127,7 +3147,7 @@
 
   
 
-    /* v0.42: 향수 카드 공통 노트 영역 여백 균형 개선 */
+    /* v0.43: 향수 카드 공통 노트 영역 여백 균형 개선 */
     .product-card {
       gap: 0;
     }
@@ -3213,7 +3233,7 @@
 
   
 
-    /* v0.42: 주문 콘텐츠 정리 + 선택 상태 강조 + 옵션 재터치 해제 */
+    /* v0.43: 주문 콘텐츠 정리 + 선택 상태 강조 + 옵션 재터치 해제 */
     .order-process {
       margin-top: 18px;
       display: grid;
@@ -3348,7 +3368,7 @@
       margin-left: 6px !important;
     }
   
-    /* v0.42 장바구니 담기 알림 인지 시간 보강 */
+    /* v0.43 장바구니 담기 알림 인지 시간 보강 */
     .cart-toast,
     .add-cart-toast,
     .add-cart-feedback.is-floating {
@@ -3369,7 +3389,7 @@
     }
 
   
-    /* v0.42 필수사항 확인 표시 */
+    /* v0.43 필수사항 확인 표시 */
     .section.is-invalid,
     .field.is-invalid,
     .privacy-box.is-invalid,
@@ -3468,7 +3488,7 @@
         <div class="order-process" aria-label="주문 과정 안내 도표">
           <div class="process-step is-accent">
             <div class="process-step-head"><span class="process-no">01</span><b>향 · 구성 선택</b></div>
-            <p>SOLVIA 또는 STEMLINE을 선택하고 원하는 용량과 주문 수량을 정합니다.</p>
+            <p>LA DOLCE VITA, SOLVIA, STEMLINE 중 원하는 향을 선택하고 용량과 주문 수량을 정합니다.</p>
           </div>
           <div class="process-step">
             <div class="process-step-head"><span class="process-no">02</span><b>장바구니 담기</b></div>
@@ -3491,12 +3511,48 @@
         <div class="showcase-kicker">Signature Perfume</div>
         <h2>주문 가능한 ILLVII의 향</h2>
         <p>
-          SOLVIA와 STEMLINE은 모두 활동 후 가볍게 뿌려 첫인상을 다시 정돈하는 데 초점을 둔 향입니다.<br />가방이나 주머니에 넣고 일상 속에서 부담 없이 사용할 수 있는 5ml 구성을 중심으로 안내하며, 50ml 본품은 현재 SOLVIA만 주문 가능합니다.
+          LA DOLCE VITA는 달콤한 과일과 화이트 플로럴의 조화를 데일리하게 즐기기 좋은 향수이며, SOLVIA와 STEMLINE은 활동 후 가볍게 뿌려 첫인상을 다시 정돈하는 데 초점을 둔 향입니다.<br />가방이나 주머니에 넣고 일상 속에서 부담 없이 사용할 수 있는 5ml 구성을 중심으로 안내하며, 50ml 본품은 현재 LA DOLCE VITA와 SOLVIA 주문 가능합니다.
         </p>
       </div>
 
       <div class="product-cards">
-        <article class="product-card scent-solvia">
+        
+        <article class="product-card scent-la-dolce-vita">
+          <div class="product-topline">
+            ILLVII · Perfumer YDO
+            <span class="product-badge">Fruity Floral</span>
+          </div>
+          <h3>LA DOLCE VITA <span class="kr-name">라돌체비타</span></h3>
+          <p class="product-copy">
+            데일리용으로 사용하기 좋은 향수로 달콤한 과일과 화이트 플로럴의 조화를 경험하실 수 있습니다.
+            밝고 사랑스러운 과일향으로 시작해 부드러운 플로럴 중심을 지나 포근한 머스크 잔향으로 마무리됩니다.
+          </p>
+          <div class="keyword-row" aria-label="LA DOLCE VITA 키워드">
+            <span>달콤한 프루티</span>
+            <span>화이트 플로럴</span>
+            <span>데일리 무드</span>
+            <span>대표 향수</span>
+          </div>
+          <div class="note-spectrum" aria-label="LA DOLCE VITA 노트 색상 팔레트">
+            <span class="spectrum-piece spectrum-top"><strong>Top</strong><em>Pineapple · Strawberry · Grapefruit</em></span>
+            <span class="spectrum-piece spectrum-middle"><strong>Middle</strong><em>Peony · Jasmine · Lily of the Valley</em></span>
+            <span class="spectrum-piece spectrum-base"><strong>Base</strong><em>Oakmoss · Patchouli · Musk</em></span>
+          </div>
+          <dl class="note-list">
+            <div><dt>Top</dt><dd>Pineapple, Strawberry, Grapefruit</dd></div>
+            <div><dt>Middle</dt><dd>Peony, Jasmine, Lily of the Valley</dd></div>
+            <div><dt>Base</dt><dd>Oakmoss, Patchouli, Musk</dd></div>
+          </dl>
+          <div class="flow-box">
+            파인애플·스트로베리의 달콤하고 생기 있는 프루티 톤으로 시작해, 화이트 플로럴의 깨끗한 중심을 지나 오크모스·패출리·머스크의 포근한 잔향으로 마무리됩니다.
+          </div>
+          <div class="product-actions">
+            <small>5ml / 50ml 주문 가능</small>
+            <button type="button" class="product-order-link" data-scroll-target="orderForm" data-scent-target="LA DOLCE VITA">LA DOLCE VITA 주문 선택</button>
+          </div>
+        </article>
+
+<article class="product-card scent-solvia">
           <div class="product-topline">
             ILLVII · Perfumer YDO
             <span class="product-badge">Citrus Clean</span>
@@ -3581,6 +3637,7 @@
             <label for="scent" class="required">주문할 향</label>
             <select id="scent" name="scent" required>
               <option value="">향을 선택해주세요</option>
+              <option value="LA DOLCE VITA">LA DOLCE VITA</option>
               <option value="SOLVIA">SOLVIA</option>
               <option value="STEMLINE">STEMLINE</option>
             </select>
@@ -3829,9 +3886,9 @@
 
 
   <script>
-    // ILLVII 향수 주문 페이지 v0.42
+    // ILLVII 향수 주문 페이지 v0.43
     // Apps Script 배포 후 생성된 웹 앱 URL을 여기에 붙여넣으세요.
-    const APP_VERSION = 'v0.42';
+    const APP_VERSION = 'v0.43';
     const ORDER_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyLiKVUgU6BrbEZDELnnQF0l0LoPZEo-7ecDQtCLHjVWNdEeHxyGkNXZwZl955a74FN/exec';
 
     if ('scrollRestoration' in history) {
