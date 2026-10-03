@@ -1,26 +1,34 @@
-# ILLVII Perfumery House
+# 일비 퍼퓨머리 하우스 | ILLVII Perfumery House
 
 Official website: https://perfumery.kr/
-Business: ZEROTONE INC. / 제로톤 주식회사
-Brand: ILLVII Perfumery House / 일비 퍼퓨머리 하우스
+Guide hub: https://perfumery.kr/guide/
+Company: 제로톤 주식회사 / ZEROTONE INC.
+Brand: 일비 퍼퓨머리 하우스 / ILLVII Perfumery House
 Location: Seoul, Republic of Korea
+Address: 서울특별시 도봉구 방학로 171-5
 Since: 2014
+Contact: business@perfumery.kr
 
-## Services
-- Small-batch perfume OEM / ODM
-- Minimum order from 50 units depending on specification
-- Fragrance development
-- Mixing and filling
-- Labeling and packaging consultation
+## Core facts
+- Small-batch perfume OEM / ODM manufacturing in Seoul, Korea
+- MOQ: consultation from 50 units depending on product specification and packaging conditions
+- Fragrance development, mixing, filling, labeling
 - Brand perfume, goods perfume, PB product consultation
+- Fragrance development: KRW 200,000 for 1 fragrance; sample 1 time and revision 1 time included
+- Production labor, fragrance/material cost, containers, labels and packaging are quoted separately
 
-## Fragrance development
-- 1 fragrance: KRW 200,000
-- Includes one sample and one revision
-- Production labor, fragrance materials, containers, labels and packaging are quoted separately
+## Official public profiles
+- Company Naver Blog: https://blog.naver.com/zerotone_inc
+- Perfumer Threads: https://www.threads.com/@perfumer.lee
 
-## Contact
-business@perfumery.kr
+## Manufacturing guides
+- Guide hub: https://perfumery.kr/guide/
+- MOQ 50: https://perfumery.kr/guide/moq-50/
+- OEM cost: https://perfumery.kr/guide/perfume-oem-cost/
+- Fragrance development: https://perfumery.kr/guide/fragrance-development/
+- Small-batch perfume: https://perfumery.kr/guide/small-batch-perfume/
+- OEM process: https://perfumery.kr/guide/perfume-oem-process/
+- Supplied materials: https://perfumery.kr/guide/supplied-materials/
 
 For current production conditions and consultation:
 https://perfumery.kr/
