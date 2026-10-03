@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>소량 향수 OEM · 50개부터 | ILLVII Perfumery House</title>
+  <meta name="theme-color" content="#171717">
   <meta name="description" content="서울 소량 향수 OEM. MOQ 50개부터, 향 개발·혼합·충진·라벨 생산까지 상담합니다. 향 개발 1종 20만원부터. ILLVII Perfumery House, Since 2014." />
 
 
@@ -633,7 +634,7 @@
           <label for="name" class="mb-2 block text-xs text-white/40">이름 / 브랜드명 <span class="text-white/70">*</span></label>
           <input id="name" name="name" type="text" required minlength="2" maxlength="40" autocomplete="name"
             class="w-full border-0 bg-transparent p-0 text-lg text-white placeholder:text-white/25 focus:ring-0"
-            placeholder="예: 오브제랩 / 김하린" aria-describedby="nameError">
+            placeholder="예: 김하린 / 오브제랩" aria-describedby="nameError">
           <p id="nameError" class="mt-2 hidden text-xs text-red-300"></p>
         </div>
 
@@ -953,6 +954,7 @@
     return `${map.year}-${map.month}-${map.day} ${map.hour}:${map.minute}:${map.second} KST`;
   };
 
+  // UTM capture: 광고/소셜/DM 링크의 유입 경로를 문의 데이터와 함께 저장합니다.
   const params = new URLSearchParams(window.location.search);
   ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach((key) => {
     const el = document.getElementById(key);
