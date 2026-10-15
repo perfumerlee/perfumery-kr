@@ -156,3 +156,45 @@ sitemap.xml / llms.txt / 각 가이드의 내부 링크를 모두 갱신했습�
 
 주의:
 기존 `/moq-50/` 등의 URL을 이미 외부에 공개했다면, 나중에 해당 경로를 `/guide/.../`로 301 redirect 하는 것을 권장합니다.
+
+
+## v0.30 Naver Search Advisor verification
+루트 `index.html`의 `<head>`에 다음 태그를 추가했습니다.
+
+`<meta name="naver-site-verification" content="4c6ba261f43dbfc13202a8765830362b8e2ad880" />`
+
+
+## v0.31 Daum Webmaster Tool
+`robots.txt` 파일 하단에 Daum 웹마스터 도구 PIN을 추가했습니다.
+
+`#DaumWebMasterTool:a1d432a51869bf6453cf7eed1bc12ba7b38fb518eb4d94fc35c67469d127e93f:Wz/rfTo9osfCpgVJS36Djg==`
+
+
+## v0.32 이미지 없는 제조 정보형 디자인
+- 메인 페이지의 Unsplash 제조 이미지를 모두 제거했습니다.
+- 실제 제조 사진처럼 오해될 수 있는 스톡 이미지 대신 CSS/타이포그래피 기반 제조 인포그래픽으로 교체했습니다.
+- Hero: MOQ 50 + Production Map
+- 공정 시각화: 컨셉 → 샘플/사양 → 생산 → 검수/출고
+- MOQ 조건 시각화: 용량 / 용기 / 향 / 패키지 / 공정
+- Service 이미지 영역: Production Scope 4 Layers
+- Experience 이미지 영역: 운영 맥락/연도/제작 기준 정보 패널
+- Unsplash preconnect / dns-prefetch 제거
+- 메인 페이지 최종 업데이트 날짜를 2026-10-15로 갱신
+- 실제 공장 사진이 확보되면 정보형 섹션 일부에 보조 이미지로 추가하는 방식을 권장합니다.
+
+
+## v0.33 실제 제조 아카이브 하이브리드
+- v0.32의 정보형 구조는 유지하고 실제 제조사진을 결합했습니다.
+- Hero를 제로톤 주식회사 실제 생산 아카이브로 교체했습니다.
+- `Actual manufacturing` 섹션을 신설해 세척 → 내용물 준비 → 충진/조립 → 부자재 검수 → 라벨 → 포장/출고 흐름을 실제 사진 6장으로 보여줍니다.
+- Experience 영역은 과거 완제품·패키지 제조 아카이브 3장으로 구성했습니다.
+- 모든 이미지는 `/assets/manufacturing/` 아래 WebP로 최적화했습니다.
+- 메인 이미지와 제조 사진 일부를 Organization/WebPage 구조화 데이터에도 연결했습니다.
+- 기존 SEO/GEO 정보, Naver 인증 태그, Daum robots PIN은 유지합니다.
+
+
+## v0.34 Manufacturing + Capabilities
+- `/manufacturing/` 실제 제조 공정·생산 아카이브
+- `/capabilities/` 향 개발·생산·사급·소량·재생산 가능 범위
+- 메인에 두 페이지 진입 카드 추가
+- sitemap.xml / llms.txt 갱신
