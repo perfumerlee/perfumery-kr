@@ -17,7 +17,8 @@
   <meta name="geo.region" content="KR-11" />
   <meta name="geo.placename" content="서울특별시 도봉구" />
 
-  <link rel="canonical" href="https://perfumery.kr/" />
+    <link rel="author" href="https://www.threads.com/@perfumer.lee" />
+<link rel="canonical" href="https://perfumery.kr/" />
   <link rel="alternate" hreflang="ko-KR" href="https://perfumery.kr/" />
   <link rel="alternate" hreflang="x-default" href="https://perfumery.kr/" />
 
@@ -61,7 +62,8 @@
       "brand": {
         "@type": "Brand",
         "name": "일비 퍼퓨머리 하우스",
-        "alternateName": "ILLVII Perfumery House"
+        "alternateName": "ILLVII Perfumery House",
+        "url": "https://perfumery.kr/"
       },
       "founder": {
         "@id": "https://perfumery.kr/#perfumer"
@@ -103,6 +105,32 @@
         "https://perfumery.kr/assets/manufacturing/03-pump-assembly.webp",
         "https://perfumery.kr/assets/manufacturing/04-component-inspection.webp",
         "https://perfumery.kr/assets/manufacturing/06-packing-shipping.webp"
+      ],
+      "legalName": "제로톤 주식회사",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "KR-BRN",
+        "value": "677-86-01647"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "business@perfumery.kr",
+        "availableLanguage": [
+          "ko-KR"
+        ],
+        "areaServed": "KR"
+      },
+      "subjectOf": [
+        {
+          "@id": "https://perfumery.kr/manufacturing/#webpage"
+        },
+        {
+          "@id": "https://perfumery.kr/capabilities/#webpage"
+        },
+        {
+          "@id": "https://perfumery.kr/guide/#webpage"
+        }
       ]
     },
     {
@@ -116,7 +144,21 @@
       },
       "sameAs": [
         "https://www.threads.com/@perfumer.lee"
-      ]
+      ],
+      "url": "https://perfumery.kr/",
+      "knowsAbout": [
+        "향수 조향",
+        "향 개발",
+        "향수 제조",
+        "향수 OEM",
+        "향수 ODM",
+        "소량 향수 생산",
+        "향수 원료",
+        "향수 제품 개발"
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://perfumery.kr/#webpage"
+      }
     },
     {
       "@type": "WebSite",
@@ -127,7 +169,39 @@
       "publisher": {
         "@id": "https://perfumery.kr/#organization"
       },
-      "inLanguage": "ko-KR"
+      "inLanguage": "ko-KR",
+      "about": {
+        "@id": "https://perfumery.kr/#organization"
+      },
+      "hasPart": [
+        {
+          "@id": "https://perfumery.kr/manufacturing/#webpage"
+        },
+        {
+          "@id": "https://perfumery.kr/capabilities/#webpage"
+        },
+        {
+          "@id": "https://perfumery.kr/guide/#webpage"
+        },
+        {
+          "@id": "https://perfumery.kr/guide/moq-50/#webpage"
+        },
+        {
+          "@id": "https://perfumery.kr/guide/perfume-oem-cost/#webpage"
+        },
+        {
+          "@id": "https://perfumery.kr/guide/fragrance-development/#webpage"
+        },
+        {
+          "@id": "https://perfumery.kr/guide/small-batch-perfume/#webpage"
+        },
+        {
+          "@id": "https://perfumery.kr/guide/perfume-oem-process/#webpage"
+        },
+        {
+          "@id": "https://perfumery.kr/guide/supplied-materials/#webpage"
+        }
+      ]
     },
     {
       "@type": "WebPage",
@@ -162,7 +236,32 @@
         "@type": "ImageObject",
         "contentUrl": "https://perfumery.kr/assets/manufacturing/hero-production.webp",
         "caption": "제로톤 주식회사 실제 향수 제조 생산 아카이브"
-      }
+      },
+      "mainEntity": {
+        "@id": "https://perfumery.kr/#service"
+      },
+      "mentions": [
+        {
+          "@type": "Thing",
+          "name": "향수 OEM"
+        },
+        {
+          "@type": "Thing",
+          "name": "소량 향수 제조"
+        },
+        {
+          "@type": "Thing",
+          "name": "향 개발"
+        },
+        {
+          "@type": "Thing",
+          "name": "향수 충진"
+        },
+        {
+          "@type": "Thing",
+          "name": "향수 라벨링"
+        }
+      ]
     },
     {
       "@type": "Service",
@@ -200,7 +299,13 @@
       "audience": {
         "@type": "Audience",
         "audienceType": "브랜드 운영자, 굿즈 제작자, PB 제품 기획자, 소량 향수 제작 의뢰자"
-      }
+      },
+      "category": "향수 OEM·ODM 및 소량 향수 제조",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://perfumery.kr/#contact"
+      },
+      "providerMobility": "static"
     },
     {
       "@type": "FAQPage",
@@ -274,7 +379,7 @@
     }
   ]
 }
-  </script>
+</script>
 
 <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -61,3 +61,18 @@
 - [ ] `sitemap.xml` 교체
 - [ ] `llms.txt` 교체
 - [ ] `assets/manufacturing/` 폴더 유지
+
+
+[v0.40]
+- [ ] `/manufacturing/index.html` 교체
+- [ ] `/capabilities/index.html` 교체
+- [ ] `assets/`는 v0.39 업로드 상태 그대로 사용 가능
+
+
+## v0.47 추가 배포 체크
+- [ ] 웹 루트 파일을 업로드하되 Apps Script는 변경하지 않기
+- [ ] /robots.txt 에 OAI-SearchBot / OAI-AdsBot / Bingbot 허용 확인
+- [ ] /sitemap.xml 에 총 10개 URL 확인
+- [ ] Bing Webmaster Tools에서 sitemap 재제출 또는 재크롤 요청
+- [ ] Google Search Console에서도 sitemap 상태 확인
+- [ ] 배포 후 https://perfumery.kr/llms.txt 직접 접근 확인

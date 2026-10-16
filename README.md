@@ -198,3 +198,62 @@ sitemap.xml / llms.txt / 각 가이드의 내부 링크를 모두 갱신했습�
 - `/capabilities/` 향 개발·생산·사급·소량·재생산 가능 범위
 - 메인에 두 페이지 진입 카드 추가
 - sitemap.xml / llms.txt 갱신
+
+
+## v0.37 original subpage restore
+- `/manufacturing/`와 `/capabilities/`를 최초 v0.34 서브페이지 디자인/내용으로 되돌렸습니다.
+- 메인 `index.html`의 비주얼 시스템을 서브페이지에 복제하지 않았습니다.
+- `/capabilities/`는 v0.34 원본 그대로 유지합니다.
+- `/manufacturing/`는 v0.34 원본에서 별도 `Manufacturing Archive` 섹션만 제거했습니다.
+- 폰트/레이아웃/카드/헤더/푸터도 v0.34 고유 스타일을 유지합니다.
+
+
+## v0.38 manufacturing refresh
+- manufacturing 페이지 제목 가독성을 강화했습니다.
+- manufacturing 페이지에서 메인과 중복되던 기존 이미지 사용을 줄이고, 공정별 Unsplash 제조 이미지를 적용했습니다.
+- 공정별 출처 표기를 figcaption에 추가했습니다.
+- capabilities 및 메인 index 구조는 유지했습니다.
+
+
+## v0.39 korean labels + capabilities images
+- index의 Manufacturing / Capabilities 카드 표기를 한글 중심으로 수정했습니다.
+- manufacturing 페이지의 이미지 구성을 퍼퓨머리 중심으로 재조정했습니다.
+- capabilities 페이지에 실제 제품/작업 이미지를 포함해 이해도를 높였습니다.
+- 하단 관련 링크를 모두 한글화했습니다.
+
+
+## v0.40 focused visuals
+- Manufacturing 페이지 이미지를 3개 핵심 장면으로 축소하고, 6단계 공정은 텍스트 카드 중심으로 변경했습니다.
+- Capabilities 페이지의 설명용 이미지를 제거하고 제작 범위/준비 상태별 진행 방식 중심으로 재구성했습니다.
+- 메인 페이지 한글 카드 표기는 v0.39 그대로 유지합니다.
+
+
+## v0.41 Product finish image
+- Manufacturing 페이지의 `Product finish` 이미지 교체
+- 기존 STILL LIFE 드로퍼 이미지 대신, 완제품 향수와 단상자가 함께 보이는 HOLIMUS 실제 제조 이미지를 사용
+- "완성된 제품"이라는 섹션 메시지와 이미지 의미를 더 직접적으로 맞춤
+
+
+## v0.42 inspection image change
+- manufacturing 페이지의 `INSPECTION` 섹션 이미지를 교체했습니다.
+- 작업자 클로즈업 사진 대신, 완제품과 패키지를 함께 보여주는 실제 제조 이미지로 변경했습니다.
+- 공정 사이 확인/검수의 의미가 더 직관적으로 전달되도록 조정했습니다.
+
+
+## v0.47 SEO / AI Search hardening
+
+이번 버전은 화면 구조와 본문 카피를 변경하지 않고 검색·AI 해석 계층만 보강했습니다.
+
+### 변경
+- robots.txt에 Googlebot, Bingbot, Yeti, OAI-SearchBot, ChatGPT-User, OAI-AdsBot 명시 허용
+- sitemap.xml에 제조 공정, 제작 가능 범위, 가이드 허브와 6개 상세 가이드를 모두 복구/등록
+- llms.txt를 회사/브랜드/조향사/서비스/대표 문서 기준으로 확장
+- 메인 JSON-LD의 Organization / Person / WebSite / WebPage / Service 연결 강화
+- 6개 가이드에 Article 구조화 데이터와 YDO author / 제로톤 publisher 관계 추가
+- 제조 공정·제작 가능 범위 페이지의 about / author / keywords 관계 강화
+- hreflang, author, googlebot, bingbot 메타 보강
+- 화면의 BODY 영역 해시 검증: 본문/레이아웃 변경 없음
+
+### 중요
+- 이 ZIP에는 Apps Script를 포함하지 않았습니다.
+- 현재 사용 중인 이메일 알림 v0.46 Code.gs는 그대로 유지하세요.

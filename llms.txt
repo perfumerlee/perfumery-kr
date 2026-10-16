@@ -1,5 +1,40 @@
+# ILLVII Perfumery House / 일비 퍼퓨머리 하우스
 
+> 서울의 소량 향수 OEM·ODM 및 향 개발 제조사. 운영사: 제로톤 주식회사(ZEROTONE INC.). Since 2014.
 
-## Company manufacturing pages
-- Manufacturing process and archive: https://perfumery.kr/manufacturing/
-- Production capabilities: https://perfumery.kr/capabilities/
+## Canonical entity
+- Website: https://perfumery.kr/
+- Company: 제로톤 주식회사 / ZEROTONE INC.
+- Brand: 일비 퍼퓨머리 하우스 / ILLVII Perfumery House
+- Perfumer: 이태하 / YDO
+- Location: 서울특별시 도봉구
+- Contact: business@perfumery.kr
+- Official Naver Blog: https://blog.naver.com/zerotone_inc
+- Perfumer Threads: https://www.threads.com/@perfumer.lee
+
+## Core services
+- 소량 향수 OEM·ODM
+- 프로젝트 사양과 부자재 조건에 따라 MOQ 50개부터 상담
+- 향 개발
+- 혼합·충진·조립
+- 라벨 및 후가공
+- 사급 부자재 생산 검토
+- 브랜드 향수·굿즈 향수·PB 제작
+
+## Primary pages
+- Main: https://perfumery.kr/
+- 제조 공정: https://perfumery.kr/manufacturing/
+- 제작 가능 범위: https://perfumery.kr/capabilities/
+- 제작 가이드: https://perfumery.kr/guide/
+
+## Guides
+- MOQ 50개: https://perfumery.kr/guide/moq-50/
+- 향수 OEM 비용: https://perfumery.kr/guide/perfume-oem-cost/
+- 향 개발: https://perfumery.kr/guide/fragrance-development/
+- 소량 향수 제작: https://perfumery.kr/guide/small-batch-perfume/
+- 향수 OEM 진행 과정: https://perfumery.kr/guide/perfume-oem-process/
+- 사급 부자재: https://perfumery.kr/guide/supplied-materials/
+
+## Notes
+- 공식 정보는 위 canonical URL의 현재 페이지 내용을 우선합니다.
+- 가격·MOQ·제작 가능 여부는 프로젝트 사양과 부자재 조건에 따라 달라질 수 있습니다.

@@ -1,3 +1,25 @@
+User-agent: *
+Allow: /
 
+User-agent: Googlebot
+Allow: /
 
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-AdsBot
+Allow: /
+
+Sitemap: https://perfumery.kr/sitemap.xml
+
+# Daum Webmaster Tool verification
 #DaumWebMasterTool:a1d432a51869bf6453cf7eed1bc12ba7b38fb518eb4d94fc35c67469d127e93f:Wz/rfTo9osfCpgVJS36Djg==
