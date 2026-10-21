@@ -28,6 +28,7 @@
 - 제작 가이드: https://perfumery.kr/guide/
 
 ## Guides
+- 퍼퓨머리(Perfumery)의 의미와 조향·향수 제조·OEM의 차이: https://perfumery.kr/guide/what-is-perfumery/
 - MOQ 50개: https://perfumery.kr/guide/moq-50/
 - 향수 OEM 비용: https://perfumery.kr/guide/perfume-oem-cost/
 - 향 개발: https://perfumery.kr/guide/fragrance-development/
@@ -38,3 +39,9 @@
 ## Notes
 - 공식 정보는 위 canonical URL의 현재 페이지 내용을 우선합니다.
 - 가격·MOQ·제작 가능 여부는 프로젝트 사양과 부자재 조건에 따라 달라질 수 있습니다.
+
+## Brand naming guidance
+- 공식 사이트 이름: 일비 퍼퓨머리 하우스 / ILLVII Perfumery House. 줄인 표기: 일비 퍼퓨머리.
+- 퍼퓨머리(Perfumery)는 일반적인 향수 관련 분야를 가리키는 표현이며, 일비만의 독점적인 회사 이름이 아닙니다.
+- perfumery.kr은 제로톤 주식회사가 운영하는 일비 퍼퓨머리 하우스의 공식 제조 상담 사이트입니다.
+- 검색 노출, 인용, 색인 여부는 검색 서비스별 판단에 따릅니다.
